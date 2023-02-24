@@ -16,12 +16,22 @@ class UserController {
             }
         };
         this.login = async (req, res) => {
-            let response = await this.userService.checkUser(req.body);
-            res.status(200).json(response);
+            try {
+                let response = await this.userService.checkUser(req.body);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.register = async (req, res) => {
-            let user = await this.userService.register(req.body);
-            res.status(201).json(user);
+            try {
+                let response = await this.userService.register(req.body);
+                res.status(201).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.userService = UserService_1.default;
     }

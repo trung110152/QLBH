@@ -13,14 +13,18 @@ class UserService {
     register = async (user) =>{
         let userCheck = await this.userRepository.findOneBy({username: user.username})
         if (!userCheck) {
-            user.password = await bcrypt.hash(user.password,10);
-            return this.userRepository.save(user);
+            user.password = await bcrypt.hash(user.password,10); /// mã hóa mật khẩu
+            this.userRepository.save(user);
+            return 'Register success'
         }
         return 'Username registered';
     }
 
     getAll = async () => {
         let users = await this.userRepository.find();
+        if(!users){
+            return 'Can not get'
+        }
         return users;
     }
 
@@ -52,21 +56,29 @@ class UserService {
         }
     }
 
-    save = async (user) => {
-        return  this.userRepository.save(user);
+    save = async (value) => {
+        let user = this.userRepository.save(value);
+        if(!user){
+            return 'Can not save user'
+        }
+        return  "Saved user"
     }
 
 
     findById = async (id)=> {
         let user = await this.userRepository.findOneBy({id:id});
         if(!user){
-            return null;
+            return 'Can not find by id user';
         }
         return user;
     }
 
     update = async (id, newUser)=> {
-        return await this.userRepository.update({id: id}, newUser);
+        let user = await this.userRepository.update({id: id}, newUser);
+        if(!user){
+            return 'Can not update user'
+        }
+        return 'Updated user'
     }
 }
 
