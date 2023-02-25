@@ -13,20 +13,40 @@ class CategoryService {
 
     getAll = async () => {
         let categories = await this.categoryRepository.find();
+        if(!categories){
+            return 'Can not get categories'
+        }
         return categories;
     }
 
 
     save = async (productCategory) => {
-        return  this.product_categoryRepository.save(productCategory);
+        let pc = this.product_categoryRepository.save(productCategory);
+        if(!pc){
+            return 'Can not save product-category'
+        }
+        return  'Saved product-category'
     }
 
     remove = async (idProduct)=> {
         let pc = await this.product_categoryRepository.findOneBy({idProduct:idProduct});
         if(!pc){
-            return null;
+            return "Can not remove product-category";
         }
-        return  this.product_categoryRepository.delete({idProduct: idProduct});
+        this.product_categoryRepository.delete({idProduct: idProduct});
+        return "Removed product-category"
+    }
+
+    update = async (value)=>{
+        let pc1 = await this.product_categoryRepository.findOneBy({idProduct:value.idProduct});
+        if(!pc1){
+            return "Can not find by id product-category";
+        }
+        let pc2 = this.product_categoryRepository.update({id: pc1.id}, value);
+        if(!pc2){
+            return "Can not update product-category"
+        }
+        return 'Updated product-category'
     }
 
 

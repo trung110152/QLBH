@@ -1,7 +1,7 @@
 declare class UserService {
     private userRepository;
     constructor();
-    register: (user: any) => Promise<any>;
+    register: (user: any) => Promise<"Register success" | "Username registered">;
     getAll: () => Promise<any>;
     checkUser: (user: any) => Promise<"Username is not existed" | "Password is wrong" | {
         username: any;
@@ -9,9 +9,9 @@ declare class UserService {
         role: any;
         token: any;
     }>;
-    save: (user: any) => Promise<any>;
+    save: (value: any) => Promise<"Can not save user" | "Saved user">;
     findById: (id: any) => Promise<any>;
-    update: (id: any, newUser: any) => Promise<any>;
+    update: (id: any, newUser: any) => Promise<"Can not update user" | "Updated user">;
 }
 declare const _default: UserService;
 export default _default;

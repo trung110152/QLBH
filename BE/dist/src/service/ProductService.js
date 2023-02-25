@@ -7,22 +7,33 @@ class ProductService {
         this.getAll = async () => {
             let sql = `select p.id, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory from product_category pc join product p on pc.idProduct = p.id join category c on pc.idCategory = c.id`;
             let products = await this.productRepository.query(sql);
+            if (!products) {
+                return 'Can not get products';
+            }
             return products;
         };
-        this.save = async (product) => {
-            return this.productRepository.save(product);
+        this.save = async (value) => {
+            let product = this.productRepository.save(value);
+            if (!product) {
+                return "Can not save product";
+            }
+            return product;
         };
         this.update = async (id, newProduct) => {
-            let product = await this.productRepository.findOneBy({ id: id });
-            if (!product) {
-                return null;
+            let product1 = await this.productRepository.findOneBy({ id: id });
+            if (!product1) {
+                return "Can not find by id product";
             }
-            return this.productRepository.update({ id: id }, newProduct);
+            let product2 = this.productRepository.update({ id: id }, newProduct);
+            if (!product2) {
+                return "Can not update product";
+            }
+            return 'Updated product';
         };
         this.findById = async (id) => {
             let product = await this.productRepository.findOneBy({ id: id });
             if (!product) {
-                return null;
+                return "Can not find by id product";
             }
             return product;
         };
@@ -30,16 +41,17 @@ class ProductService {
             let sql = `select p.id, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory from product_category pc join product p on pc.idProduct = p.id join category c on pc.idCategory = c.id where p.name like '%${search}%'`;
             let product = await this.productRepository.query(sql);
             if (!product) {
-                return null;
+                return "Can not find by name";
             }
             return product;
         };
         this.remove = async (id) => {
             let product = await this.productRepository.findOneBy({ id: id });
             if (!product) {
-                return null;
+                return 'Can not remove product';
             }
-            return this.productRepository.delete({ id: id });
+            this.productRepository.delete({ id: id });
+            return 'Removed product';
         };
         this.productRepository = data_source_1.AppDataSource.getRepository(product_1.Product);
     }

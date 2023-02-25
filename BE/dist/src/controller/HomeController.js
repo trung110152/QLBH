@@ -5,12 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ProductService_1 = __importDefault(require("../service/ProductService"));
 const CategoryService_1 = __importDefault(require("../service/CategoryService"));
+const OrderService_1 = __importDefault(require("../service/OrderService"));
 class HomeController {
     constructor() {
         this.getAll = async (req, res) => {
             try {
-                let products = await ProductService_1.default.getAll();
-                res.status(200).json(products);
+                let response = await ProductService_1.default.getAll();
+                res.status(200).json(response);
             }
             catch (e) {
                 res.status(500).json(e.message);
@@ -19,51 +20,96 @@ class HomeController {
         this.findById = async (req, res) => {
             try {
                 let id = req.params.id;
-                let product = await this.productService.findById(id);
-                res.status(200).json(product);
+                let response = await this.productService.findById(id);
+                res.status(200).json(response);
             }
             catch (e) {
                 res.status(500).json(e.message);
             }
         };
         this.create = async (req, res) => {
-            let a = req.body;
-            let product = {
-                content: a.content,
-                status: a.status,
-                image: a.image,
-                date: a.date,
-                user: a.user
-            };
-            let newBlog = await ProductService_1.default.save(product);
-            let pc = {
-                idBlog: newBlog.id,
-                idCategory: a.idCategory
-            };
-            await CategoryService_1.default.save(pc);
-            res.status(200).json('Success');
+            try {
+                let p = req.body;
+                let product = {
+                    name: p.name,
+                    price: p.price,
+                    description: p.description,
+                    totalQuantity: p.totalQuantity,
+                    image: p.image
+                };
+                let response1 = await ProductService_1.default.save(product);
+                if (response1 === 'Can not save product') {
+                    res.status(200).json(response1);
+                }
+                else {
+                    let pc = {
+                        idBlog: response1.id,
+                        idCategory: p.idCategory
+                    };
+                    let response2 = await CategoryService_1.default.save(pc);
+                    res.status(200).json(response2);
+                }
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.update = async (req, res) => {
-            let id = req.params.id;
-            let newBlog = req.body;
-            await this.productService.update(id, newBlog);
-            res.status(200).json('Success!');
+            try {
+                let id = req.params.id;
+                let value = req.body;
+                let newProduct = {
+                    name: value.name,
+                    price: value.price,
+                    description: value.description,
+                    totalQuantity: value.totalQuantity,
+                    image: value.image
+                };
+                let response1 = await this.productService.update(id, newProduct);
+                if (response1 === 'Updated product') {
+                    let pc = {
+                        idProduct: response1.id,
+                        idCategory: value.idCategory
+                    };
+                    let response2 = await this.categoryService.update(pc);
+                    return res.status(200).json(response2);
+                }
+                return res.status(200).json(response1);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.remove = async (req, res) => {
-            let id = req.params.id;
-            await this.productService.remove(id);
-            await this.categoryService.remove(id);
-            res.status(200).json('Success!');
+            try {
+                let id = req.params.id;
+                let response1 = await this.productService.remove(id);
+                if (response1 === "Removed product") {
+                    let response2 = await this.categoryService.remove(id);
+                    return res.status(200).json(response2);
+                }
+                else {
+                    return res.status(200).json(response1);
+                }
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.search = async (req, res) => {
-            let search = req.query.name;
-            let blogs = await ProductService_1.default.findByName(search);
-            res.status(200).json(blogs);
+            try {
+                let search = req.query.name;
+                let response = await ProductService_1.default.findByName(search);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
         };
         this.getCategories = async (req, res) => {
             try {
-                let categories = await CategoryService_1.default.getAll();
-                res.status(200).json(categories);
+                let response = await CategoryService_1.default.getAll();
+                res.status(200).json(response);
             }
             catch (e) {
                 res.status(500).json(e.message);
@@ -71,6 +117,7 @@ class HomeController {
         };
         this.productService = ProductService_1.default;
         this.categoryService = CategoryService_1.default;
+        this.orderService = OrderService_1.default;
     }
 }
 exports.default = new HomeController();

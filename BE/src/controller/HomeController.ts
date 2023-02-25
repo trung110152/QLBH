@@ -1,84 +1,124 @@
 import {Request, Response} from "express";
 import productService from "../service/ProductService";
 import categoryService from "../service/CategoryService";
+import orderService from "../service/OrderService";
 class HomeController {
     private productService;
     private categoryService;
+    private orderService;
 
     constructor() {
         this.productService = productService;
         this.categoryService = categoryService;
+        this.orderService = orderService;
     }
 
     getAll = async (req: Request, res: Response) => {
         try{
-            let products = await productService.getAll();
-            res.status(200).json(products)
+            let response = await productService.getAll();
+            res.status(200).json(response)
         } catch (e) {
             res.status(500).json(e.message)
         }
     }
 
-
     findById = async (req: Request, res: Response) => {
         try{
             let id = req.params.id
-            let product = await this.productService.findById(id);
-            res.status(200).json(product)
+            let response = await this.productService.findById(id);
+            res.status(200).json(response)
         } catch (e) {
             res.status(500).json(e.message)
         }
     }
 
     create = async (req: Request, res: Response) => {
-        let a = req.body;
-        let product = {
-            content : a.content,
-            status : a.status,
-            image : a.image,
-            date: a.date,
-            user: a.user
-        };
-        let newBlog = await productService.save(product);
-        let pc = {
-            idBlog: newBlog.id,
-            idCategory: a.idCategory
-        };
-        await categoryService.save(pc);
-        res.status(200).json('Success');
+        try{
+            let p = req.body;
+            let product = {
+                name : p.name,
+                price : p.price,
+                description : p.description,
+                totalQuantity: p.totalQuantity,
+                image: p.image
+            };
+            let response1 = await productService.save(product);
+            if(response1 === 'Can not save product'){
+                res.status(200).json(response1);
+            } else {
+                let pc = {
+                    idBlog: response1.id,
+                    idCategory: p.idCategory
+                };
+                let response2  = await categoryService.save(pc);
+                res.status(200).json(response2);
+            }
+        } catch (e) {
+            res.status(500).json(e.message);
+        }
+
+
     }
-
-
 
     update = async (req: Request, res: Response) => {
-        let id = req.params.id;
-        let newBlog = req.body;
-        await this.productService.update(id, newBlog);
-        res.status(200).json('Success!')
+        try{
+            let id = req.params.id;
+            let value = req.body;
+            let newProduct = {
+                name : value.name,
+                price : value.price,
+                description : value.description,
+                totalQuantity: value.totalQuantity,
+                image: value.image
+            };
+            let response1 = await this.productService.update(id, newProduct);
+            if(response1 ==='Updated product'){
+                let pc = {
+                    idProduct: response1.id,
+                    idCategory: value.idCategory
+                }
+                let response2 = await this.categoryService.update(pc)
+                return  res.status(200).json(response2)
+            }
+             return  res.status(200).json(response1)
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+
     }
 
-
     remove = async (req: Request, res: Response) => {
-        let id = req.params.id;
-        await this.productService.remove(id);
-        await this.categoryService.remove(id)
-        res.status(200).json('Success!')
+        try{
+            let id = req.params.id;
+            let response1 = await this.productService.remove(id);
+            if(response1 === "Removed product"){
+              let response2 = await this.categoryService.remove(id)
+              return  res.status(200).json(response2)
+            } else {
+                return  res.status(200).json(response1)
+            }
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+
 
     }
 
     search = async (req: Request, res: Response) => {
-        let search = req.query.name;
-        let blogs = await productService.findByName(search);
-        res.status(200).json(blogs)
+        try{
+            let search = req.query.name;
+            let response = await productService.findByName(search);
+            res.status(200).json(response)
+        }catch (e) {
+            res.status(500).json(e.message)
+        }
+
     }
-
-
-
 
     getCategories = async (req: Request, res: Response) => {
         try{
-            let categories = await categoryService.getAll();
-            res.status(200).json(categories)
+            let response = await categoryService.getAll();
+            res.status(200).json(response)
         } catch (e) {
             res.status(500).json(e.message)
         }

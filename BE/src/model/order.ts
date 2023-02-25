@@ -16,6 +16,6 @@ export class Order {
     time: string
     @Column()
     totalPoint: number
-    @Column()
+    @Column({default:'buying'})
     status: string
 }

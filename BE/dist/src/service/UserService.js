@@ -13,12 +13,16 @@ class UserService {
             let userCheck = await this.userRepository.findOneBy({ username: user.username });
             if (!userCheck) {
                 user.password = await bcrypt_1.default.hash(user.password, 10);
-                return this.userRepository.save(user);
+                this.userRepository.save(user);
+                return 'Register success';
             }
             return 'Username registered';
         };
         this.getAll = async () => {
             let users = await this.userRepository.find();
+            if (!users) {
+                return 'Can not get';
+            }
             return users;
         };
         this.checkUser = async (user) => {
@@ -48,18 +52,26 @@ class UserService {
                 return check;
             }
         };
-        this.save = async (user) => {
-            return this.userRepository.save(user);
+        this.save = async (value) => {
+            let user = this.userRepository.save(value);
+            if (!user) {
+                return 'Can not save user';
+            }
+            return "Saved user";
         };
         this.findById = async (id) => {
             let user = await this.userRepository.findOneBy({ id: id });
             if (!user) {
-                return null;
+                return 'Can not find by id user';
             }
             return user;
         };
         this.update = async (id, newUser) => {
-            return await this.userRepository.update({ id: id }, newUser);
+            let user = await this.userRepository.update({ id: id }, newUser);
+            if (!user) {
+                return 'Can not update user';
+            }
+            return 'Updated user';
         };
         this.userRepository = data_source_1.AppDataSource.getRepository(user_1.User);
     }
