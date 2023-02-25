@@ -12,7 +12,6 @@ export default function Navbar(){
 
 
                 <header className="header shop">
-
                     <div className="topbar">
                         <div className="container">
                             <div className="row">
@@ -33,7 +32,7 @@ export default function Navbar(){
                                             <li><i className="ti-location-pin"></i> Store location</li>
                                             <li><i className="ti-alarm-clock"></i> <Link to="#">Daily deal</Link></li>
                                             <li><i className="ti-user"></i> <Link to="#" >{user.username}</Link></li>
-                                            <li><i className="ti-power-off"></i><a className='btn' type={'summit'} onClick={()=>{
+                                            <li><i className="ti-power-off"></i><a type={'summit'} onClick={()=>{
                                                 localStorage.clear()
                                                 navigate('/')
                                             }}>Logout</a></li>
@@ -142,9 +141,12 @@ export default function Navbar(){
                                                     <div className="nav-inner">
                                                         <ul className="nav main-menu menu navbar-nav">
                                                             <li className="active"><Link to="/home">Home</Link></li>
-
-                                                            <li ><Link to="/home/manager-product">Manager Product</Link></li>
-                                                            <li><Link to="/home/add-product">Add Product</Link></li>
+                                                            {user.role === 'admin' &&
+                                                                <>
+                                                                    <li><Link to="/home/manager-product">Manager Product</Link></li>
+                                                                    <li><Link to="/home/add-product">Add Product</Link></li>
+                                                                </>
+                                                            }
                                                             <li><Link to="#">Service</Link></li>
                                                             <li><Link to="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></Link>
                                                                 <ul className="dropdown">

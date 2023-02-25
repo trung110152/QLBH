@@ -1,11 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {deleteProduct, getProducts} from "../../services/productsService";
-
 import {Link, useNavigate} from "react-router-dom";
 import swal from 'sweetalert';
 
-export default function MyProducs() {
+export default function MyProducts() {
 
 
     const dispatch = useDispatch();

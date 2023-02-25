@@ -40,6 +40,7 @@ export const deleteProduct = createAsyncThunk(
 export const editProduct = createAsyncThunk(
     'products/editProduct',
     async (data)=>{
+        console.log(data)
         await customAxios.put('products/' + data.id,data);
         const res = await customAxios.get('products');
         return res.data;

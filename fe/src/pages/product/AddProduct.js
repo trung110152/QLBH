@@ -1,12 +1,12 @@
 import {useDispatch, useSelector} from "react-redux";
 import {Link, useNavigate} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
-import {addProduct, getProducts} from "../../services/productsService";
+import {addProduct} from "../../services/productsService";
 import {useEffect, useState} from "react";
 import {storage} from "../../services/firebase";
 import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
 import {getCategory} from "../../services/categoruService";
-import Navbar from "../../components/Navbar";
+
 
 
 
@@ -30,7 +30,7 @@ export default function AddProduct() {
 
 
     const handleAdd = async (values) => {
-        let data = {...values, user: user.idUser};
+        let data = {...values};
         await dispatch(addProduct(data));
         await navigate('/home')
     }
@@ -86,43 +86,16 @@ export default function AddProduct() {
 
 
     return (
-            <Navbar></Navbar>,
         <>
-            <section className="hero-slider">
-                <div className="single-slider">
-                    <div className="container">
-                        <div className="row no-gutters">
-                            <div className="col-lg-9 offset-lg-3 col-12">
-                                <div className="text-inner">
-                                    <div className="row">
-                                        <div className="col-lg-7 col-12">
-                                            <div className="hero-text">
-                                                <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                                <p>Maboriosam in a nesciung eget magnae dapibus disting tloctio in
-                                                    the find it pereri  odiy maboriosm.</p>
-                                                <div className="button">
-                                                    <Link to="#" className="btn">Shop Now!</Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
             <div className="row">
                 <div className="offset-3 col-6 mt-5">
                     <h1 style={{textAlign: 'center'}}>Add blog</h1>
                     <Formik
                         initialValues={{
-                            content: '',
-                            status: '',
-                            date: '',
+                            name: '',
+                            price: '',
+                            description: '',
+                            totalQuantity:'',
                             idCategory: ''
                         }}
                         onSubmit={(values) => {
@@ -131,16 +104,20 @@ export default function AddProduct() {
                         }}>
                         <Form>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Content</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'content'}/>
+                                <label htmlFor="exampleInput" className="form-label">Name product</label>
+                                <Field type="text" className="form-control" id="exampleInput" name={'name'}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Status</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'status'}/>
+                                <label htmlFor="exampleInput" className="form-label">Price</label>
+                                <Field type="number" className="form-control" id="exampleInput" name={'price'}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Date</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'date'}/>
+                                <label htmlFor="exampleInput" className="form-label">Description</label>
+                                <Field type="text" className="form-control" id="exampleInput" name={'description'}/>
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="exampleInput" className="form-label">Quantity</label>
+                                <Field type="number" className="form-control" id="exampleInput" name={'totalQuantity'}/>
                             </div>
                             <div className="ml-3 form-group">
                                 <label htmlFor="exampleInputPassword">Image</label>
@@ -158,7 +135,7 @@ export default function AddProduct() {
 
                             </div>
                             <div className="mb-3">
-                                <Field as='select' name={'idCategory'}>
+                                <Field as='select' name={'idCategory'} >
                                     {category !== undefined && category.map((item)=>(
                                         <option value={item.id}>{item.name}</option>
                                     ))

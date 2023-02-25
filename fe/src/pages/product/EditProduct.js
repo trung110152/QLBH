@@ -1,37 +1,41 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate, useParams} from "react-router-dom";
-import {login} from "../../services/userService";
+import { useNavigate, useParams} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
-import {addProduct, editProduct, findByIdProduct, getProducts} from "../../services/productsService";
+import {editProduct, findByIdProduct} from "../../services/productsService";
 import {useEffect, useState} from "react";
 import {storage} from "../../services/firebase";
 import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {getCategory} from "../../services/categoruService";
 
 
 export default function EditProduct() {
     const {id} = useParams();
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
-
-    const user = useSelector(state => {
-        return state.user.currentUser
+    const product = useSelector(state => {
+        return state.products.product
     })
-
     useEffect(() => {
         dispatch(findByIdProduct(id)).then((value) => {
             setUrls([value.payload.image])
         });
     }, [])
 
-    const blog = useSelector(state => {
-        return state.blogs.blog
+
+    const category = useSelector(state =>{
+        return state.categories.category
     })
 
+    useEffect(()=>{
+        dispatch(getCategory())
+    },[]);
+
+
+
     const handleEdit = async (values) => {
-        let newBlog = {...values};
-        await dispatch(editProduct(newBlog));
-        await navigate('/home')
+        let newProduct = {...values};
+        await dispatch(editProduct(newProduct));
+        await navigate('/home/manager-product')
     }
 
 
@@ -65,7 +69,6 @@ export default function EditProduct() {
                     },
                     async () => {
                         await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLs) => {
-                            setUrls([])
                             setUrls(prevState => [...prevState, downloadURLs])
                         });
                     }
@@ -83,34 +86,37 @@ export default function EditProduct() {
         <>
             <div className="row">
                 <div className="offset-3 col-6 mt-5">
-                    <h1 style={{textAlign: 'center'}}>Edit blog</h1>
+                    <h1 style={{textAlign: 'center'}}>Edit product</h1>
                     <Formik
                         initialValues={{
                             id: id,
-                            content: blog.content,
-                            status: blog.status,
-                            date: blog.date,
-                            image: urls[0],
+                            name: product.name,
+                            price: product.price,
+                            description: product.description,
+                            totalQuantity:product.totalQuantity,
+                            image: urls[urls.length - 1],
                         }}
                         onSubmit={(values) => {
                             handleEdit(values)
                         }}
                         enableReinitialize={true}
                     >
-
-
                         <Form>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Content</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'content'}/>
+                                <label htmlFor="exampleInput" className="form-label">Name product</label>
+                                <Field type="text" className="form-control" id="exampleInput" name={'name'}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Status</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'status'}/>
+                                <label htmlFor="exampleInput" className="form-label">Description</label>
+                                <Field type="text" className="form-control" id="exampleInput" name={'description'}/>
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Date</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'date'}/>
+                                <label htmlFor="exampleInput" className="form-label">Price</label>
+                                <Field type="number" className="form-control" id="exampleInput" name={'price'}/>
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="exampleInput" className="form-label">Quantity</label>
+                                <Field type="number" className="form-control" id="exampleInput" name={'totalQuantity'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Image</label>
@@ -118,15 +124,23 @@ export default function EditProduct() {
 
                                 <input type='file' onChange={handleChange}>
                                 </input>
-                                <button className="btn btn-outline-success" style={{marginRight: 10}} type='button'
+                                <button className="btn btn-outline-primary" style={{marginRight: 10}} type='button'
                                         onClick={handleUpload}>Up
                                 </button>
                                 {urls &&
-                                    <>
-                                        <img src={urls[0]} alt="" style={{width: 50}}/></>
+                                    <><img src={urls[urls.length -1]} alt="" style={{width: 50}}/></>
                                 }
                             </div>
-                            <button type="submit" className="btn btn-primary">Save</button>
+                            <div className="mb-3">
+                                <Field as='select' name={'idCategory'} >
+                                    {category !== undefined && category.map((item)=>(
+                                        <option value={item.id}>{item.name}</option>
+                                    ))
+
+                                    }
+                                </Field>
+                            </div>
+                            <button type="submit" className="btn btn-outline-primary primary">Save</button>
                         </Form>
                     </Formik>
                 </div>

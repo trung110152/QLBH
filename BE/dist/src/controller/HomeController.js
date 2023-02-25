@@ -43,7 +43,7 @@ class HomeController {
                 }
                 else {
                     let pc = {
-                        idBlog: response1.id,
+                        idProduct: response1.id,
                         idCategory: p.idCategory
                     };
                     let response2 = await CategoryService_1.default.save(pc);
@@ -58,6 +58,7 @@ class HomeController {
             try {
                 let id = req.params.id;
                 let value = req.body;
+                console.log(value);
                 let newProduct = {
                     name: value.name,
                     price: value.price,

@@ -9,7 +9,7 @@ import ListProduct from "./pages/product/ListProduct";
 import AddProduct from "./pages/product/AddProduct";
 import {useDispatch, useSelector} from "react-redux";
 import EditProduct from "./pages/product/EditProduct";
-import MyProducs from "./pages/product/MyProducs";
+import MyProducts from "./pages/product/MyProducts";
 import ManagerProduct from "./pages/product/ManagerProduct";
 import AddCart from "./pages/product/AddCart";
 
@@ -33,7 +33,7 @@ function App() {
                     <Route path={'add-product'} element={<AddProduct/>}/>
                     <Route path={'edit-product/:id'} element={<EditProduct/>}/>
                     <Route path={'addCart/:id'} element={<AddCart/>}/>
-                    <Route path={'my-products'} element={<MyProducs/>}/>
+                    <Route path={'my-products'} element={<MyProducts/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }

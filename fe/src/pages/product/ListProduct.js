@@ -6,36 +6,24 @@ import {Link, useNavigate, useSearchParams} from "react-router-dom";
 
 export default function ListProduct(){
     const dispatch = useDispatch();
-    const products = useSelector(state => {
-      return   state.products.products
-    })
 
 
-    //
     // const [page] = useSearchParams()
-    //
     // const page1 = page.get('page') || 1;
-
-    // const products = useSelector(state => {
-    //     return state.products.products
-    // });
-
-
     // const load = useSelector(state=>{
     //     return state.products.loading
     // })
-
-    const user = useSelector(state=>{
-        return state.user.currentUser
-    })
-    useEffect(()=>{
-        dispatch(getProducts())
-    })
     // const totalPages = useSelector(state => {
     //     if (state.products.products !== undefined) {
     //         return state.products.products.totalPage;
     //     }
     // })
+    const user = useSelector(state=>{
+        return state.user.currentUser
+    })
+    const products = useSelector(state => {
+        return   state.products.products
+    })
 
     useEffect(()=>{
         dispatch(getProducts()).then(()=>{
@@ -94,6 +82,7 @@ export default function ListProduct(){
                             </div>
                         </div>
                         <div className="col-lg-4 col-12">
+
                             <div className="single-banner tab-height">
                                 <img src="https://via.placeholder.com/600x370" alt="#"/>
                                     <div className="content">
@@ -141,10 +130,11 @@ export default function ListProduct(){
                                                             <div className="product-img">
                                                                 <Link to="product-details.html">
                                                                     <img className="default-img"
-                                                                         src="https://via.placeholder.com/550x750" alt="#"/>
+                                                                         src={blog.image} alt="#" style={{width:320, height:450}}/>
                                                                     <img className="hover-img"
                                                                          src="https://via.placeholder.com/550x750"
                                                                          alt="#"/>
+
                                                                 </Link>
                                                                 <div className="button-head">
                                                                     <div className="product-action">
@@ -157,16 +147,18 @@ export default function ListProduct(){
                                                                             className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                     </div>
                                                                     <div className="product-action-2">
-                                                                        <Link title="Add to cart" to="/home/addCart">Add to cart</Link>
+                                                                        <Link  to="/home/addCart">Add to cart</Link>
+                                                                        <span> or </span>
+                                                                        <Link  to="#" style={{color: "red"}}>Buy now</Link>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className="product-content">
-                                                                <h3><Link to="product-details.html">Women Hot Collection</Link>
-                                                                </h3>
+                                                                <h5>{blog.description}</h5>
                                                                 <div className="product-price">
-                                                                    <span>{blog.price}</span>
+                                                                    <span style={{color:"red"}}>{blog.price} $</span>
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
