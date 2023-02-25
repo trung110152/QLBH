@@ -139,7 +139,7 @@ export default function AddCart(){
                 {/*                                        <li><Link to="#">Pages</Link></li>*/}
                 {/*                                        <li><Link to="#">Blog<i className="ti-angle-down"></i></Link>*/}
                 {/*                                            <ul className="dropdown">*/}
-                {/*                                                <li><Link to="blog-single-sidebar.html">Blog Single*/}
+                {/*                                                <li><Link to="product-single-sidebar.html">Blog Single*/}
                 {/*                                                    Sidebar</Link></li>*/}
                 {/*                                            </ul>*/}
                 {/*                                        </li>*/}

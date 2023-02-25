@@ -1,15 +1,17 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate, useParams} from "react-router-dom";
-import {login} from "../../services/userService";
+import {Link, useNavigate} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
-import {addBlog, editBlog, findByIdBlog, getBlogs} from "../../services/blogsService";
+import {addProduct, getProducts} from "../../services/productsService";
 import {useEffect, useState} from "react";
 import {storage} from "../../services/firebase";
-import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
+import {getCategory} from "../../services/categoruService";
+import Navbar from "../../components/Navbar";
 
 
-export default function EditBlog() {
-    const {id} = useParams();
+
+export default function AddProduct() {
+
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -17,27 +19,28 @@ export default function EditBlog() {
     const user = useSelector(state => {
         return state.user.currentUser
     })
-
-    useEffect(() => {
-        dispatch(findByIdBlog(id)).then((value) => {
-            setUrls([value.payload.image])
-        });
-    }, [])
-
-    const blog = useSelector(state => {
-        return state.blogs.blog
+    const category = useSelector(state =>{
+    return state.categories.category
     })
 
-    const handleEdit = async (values) => {
-        let newBlog = {...values};
-        await dispatch(editBlog(newBlog));
+
+    useEffect(()=>{
+        dispatch(getCategory())
+    },[]);
+
+
+    const handleAdd = async (values) => {
+        let data = {...values, user: user.idUser};
+        await dispatch(addProduct(data));
         await navigate('/home')
     }
 
-
     const [images, setImages] = useState([]);
+
     const [urls, setUrls] = useState([]);
+
     const [progress, setProgress] = useState(0);
+
     const handleChange = (e) => {
         for (let i = 0; i < e.target.files.length; i++) {
             const newImage = e.target.files[i];
@@ -45,6 +48,9 @@ export default function EditBlog() {
             setImages((prevState) => [...prevState, newImage]);
         }
     };
+
+
+
     const handleUpload = () => {
         const promises = [];
         if (images.length > 0) {
@@ -65,8 +71,8 @@ export default function EditBlog() {
                     },
                     async () => {
                         await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLs) => {
-                            setUrls([])
                             setUrls(prevState => [...prevState, downloadURLs])
+                            console.log("File available at", downloadURLs);
                         });
                     }
                 );
@@ -80,25 +86,49 @@ export default function EditBlog() {
 
 
     return (
+            <Navbar></Navbar>,
         <>
+            <section className="hero-slider">
+                <div className="single-slider">
+                    <div className="container">
+                        <div className="row no-gutters">
+                            <div className="col-lg-9 offset-lg-3 col-12">
+                                <div className="text-inner">
+                                    <div className="row">
+                                        <div className="col-lg-7 col-12">
+                                            <div className="hero-text">
+                                                <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
+                                                <p>Maboriosam in a nesciung eget magnae dapibus disting tloctio in
+                                                    the find it pereri  odiy maboriosm.</p>
+                                                <div className="button">
+                                                    <Link to="#" className="btn">Shop Now!</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
             <div className="row">
                 <div className="offset-3 col-6 mt-5">
-                    <h1 style={{textAlign: 'center'}}>Edit blog</h1>
+                    <h1 style={{textAlign: 'center'}}>Add blog</h1>
                     <Formik
                         initialValues={{
-                            id: id,
-                            content: blog.content,
-                            status: blog.status,
-                            date: blog.date,
-                            image: urls[0],
+                            content: '',
+                            status: '',
+                            date: '',
+                            idCategory: ''
                         }}
                         onSubmit={(values) => {
-                            handleEdit(values)
-                        }}
-                        enableReinitialize={true}
-                    >
-
-
+                            values.image = urls[0]
+                            handleAdd(values)
+                        }}>
                         <Form>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Content</label>
@@ -112,25 +142,36 @@ export default function EditBlog() {
                                 <label htmlFor="exampleInput" className="form-label">Date</label>
                                 <Field type="text" className="form-control" id="exampleInput" name={'date'}/>
                             </div>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Image</label>
+                            <div className="ml-3 form-group">
+                                <label htmlFor="exampleInputPassword">Image</label>
                                 <br/>
-
+                                {urls.map(item => (
+                                    <>
+                                        <img src={item} alt="" style={{width: 50}}/></>
+                                ))}
+                                <br/>
                                 <input type='file' onChange={handleChange}>
                                 </input>
                                 <button className="btn btn-outline-success" style={{marginRight: 10}} type='button'
                                         onClick={handleUpload}>Up
                                 </button>
-                                {urls &&
-                                    <>
-                                        <img src={urls[0]} alt="" style={{width: 50}}/></>
-                                }
+
                             </div>
-                            <button type="submit" className="btn btn-primary">Save</button>
+                            <div className="mb-3">
+                                <Field as='select' name={'idCategory'}>
+                                    {category !== undefined && category.map((item)=>(
+                                        <option value={item.id}>{item.name}</option>
+                                    ))
+
+                                    }
+                                </Field>
+                            </div>
+                            <button style={{marginBottom:50}} type="submit" className="btn btn-primary">Add</button>
                         </Form>
                     </Formik>
                 </div>
             </div>
+
         </>
     )
 }

@@ -3,9 +3,9 @@ import {getStorage} from "firebase/storage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBEeuc5h9lXVdFBD9f4zU1ICvR6foavC4Q",
-    authDomain: "blog-reactjs-4074e.firebaseapp.com",
-    projectId: "blog-reactjs-4074e",
-    storageBucket: "blog-reactjs-4074e.appspot.com",
+    authDomain: "product-reactjs-4074e.firebaseapp.com",
+    projectId: "product-reactjs-4074e",
+    storageBucket: "product-reactjs-4074e.appspot.com",
     messagingSenderId: "366723734041",
     appId: "1:366723734041:web:fc6a90dfa25a659e786888",
     measurementId: "G-REVKTWL4CG"

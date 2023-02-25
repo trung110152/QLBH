@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {deleteBlog, getBlogs} from "../../services/blogsService";
+import {deleteProduct, getProducts} from "../../services/productsService";
 
 import {Link, useNavigate} from "react-router-dom";
 import swal from 'sweetalert';
 
-export default function MyBlogs() {
+export default function MyProducs() {
 
 
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export default function MyBlogs() {
 
 
     useEffect(() => {
-        dispatch(getBlogs())
+        dispatch(getProducts())
     }, []);
 
 
@@ -71,8 +71,8 @@ export default function MyBlogs() {
                                                     })
                                                         .then((willDelete) => {
                                                             if (willDelete) {
-                                                                dispatch(deleteBlog(item.id)).then(() => {
-                                                                    dispatch(getBlogs()).then(() => {
+                                                                dispatch(deleteProduct(item.id)).then(() => {
+                                                                    dispatch(getProducts()).then(() => {
                                                                         navigate('/home')
                                                                     })
 
