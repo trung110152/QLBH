@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {storage} from "../../services/firebase";
 import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 import {getCategory} from "../../services/categoruService";
+import swal from 'sweetalert';
 
 
 export default function EditProduct() {
@@ -35,6 +36,9 @@ export default function EditProduct() {
     const handleEdit = async (values) => {
         let newProduct = {...values};
         await dispatch(editProduct(newProduct));
+        swal(`Edited ${newProduct.name} success!`, {
+            icon: "success",
+        });
         await navigate('/home/manager-product')
     }
 

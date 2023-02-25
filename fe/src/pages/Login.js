@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {login} from "../services/userService";
 import {Field, Form, Formik} from "formik";
+import swal from "sweetalert";
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -10,7 +11,11 @@ export default function Login() {
     const handleLogin = async (values) =>{
         await dispatch(login(values)).then((e)=>{
             if(e.payload !== 'Username is not existed' && e.payload !== 'Password is wrong'){
-                navigate('/home')
+                swal(`Well come, "${e.payload.username}"`, {
+                    icon: "success",
+                })
+                    navigate('/home')
+
             }else{
                 navigate('/')
             }

@@ -30,6 +30,9 @@ class HomeController {
         this.create = async (req, res) => {
             try {
                 let p = req.body;
+                if (!p.idCategory) {
+                    p.idCategory = 1;
+                }
                 let product = {
                     name: p.name,
                     price: p.price,
@@ -58,7 +61,9 @@ class HomeController {
             try {
                 let id = req.params.id;
                 let value = req.body;
-                console.log(value);
+                if (!value.idCategory) {
+                    value.idCategory = 1;
+                }
                 let newProduct = {
                     name: value.name,
                     price: value.price,

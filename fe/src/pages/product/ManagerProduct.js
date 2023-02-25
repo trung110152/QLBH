@@ -1,11 +1,13 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getProducts} from "../../services/productsService";
-import {Link} from "react-router-dom";
+import {deleteProduct, getProducts} from "../../services/productsService";
+import {Link, useNavigate} from "react-router-dom";
+import swal from 'sweetalert';
 
 
 export default function ManagerProduct(){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const products = useSelector(state => {
         return   state.products.products
     })
@@ -48,7 +50,27 @@ export default function ManagerProduct(){
                                 <th scope="col">{product.totalQuantity}</th>
                                 <th scope="col" >
                                     <Link to={`/home/edit-product/${product.id}`}><button className="btn btn-outline-primary">Edit</button></Link>
-                                    <button className="btn btn-outline-danger">Delete</button>
+                                    <button className="btn btn-outline-danger" onClick={()=>{
+                                        swal({
+                                            title: "Are you sure?",
+                                            text: "Once deleted, you will not be able to recover this imaginary file!",
+                                            icon: "warning",
+                                            buttons: true,
+                                            dangerMode: true,
+                                        })
+                                            .then((willDelete) => {
+                                                if (willDelete) {
+                                                    dispatch(deleteProduct(product.id))
+                                                    swal(`Poof! Deleted ${product.name}!`, {
+                                                        icon: "success",
+                                                    })
+                                                    navigate('/home/manager-product')
+                                                    ;
+                                                } else {
+                                                    swal("Your imaginary file is safe!");
+                                                }
+                                            });
+                                    }}>Delete</button>
                                 </th>
                             </tr>
                         ))}

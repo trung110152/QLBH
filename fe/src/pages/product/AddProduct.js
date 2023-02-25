@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import {storage} from "../../services/firebase";
 import {ref, uploadBytesResumable, getDownloadURL} from "firebase/storage";
 import {getCategory} from "../../services/categoruService";
+import swal from "sweetalert";
 
 
 
@@ -32,6 +33,9 @@ export default function AddProduct() {
     const handleAdd = async (values) => {
         let data = {...values};
         await dispatch(addProduct(data));
+        swal("Added new product success!", {
+            icon: "success",
+        });
         await navigate('/home')
     }
 
@@ -143,7 +147,7 @@ export default function AddProduct() {
                                     }
                                 </Field>
                             </div>
-                            <button style={{marginBottom:50}} type="submit" className="btn btn-primary">Add</button>
+                            <button style={{marginBottom:50}} type="submit" className="btn btn-outline-primary">Add</button>
                         </Form>
                     </Formik>
                 </div>

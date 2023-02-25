@@ -4,6 +4,7 @@ import {getProducts} from "../../services/productsService";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 
 
+
 export default function ListProduct(){
     const dispatch = useDispatch();
 
@@ -138,9 +139,7 @@ export default function ListProduct(){
                                                                 </Link>
                                                                 <div className="button-head">
                                                                     <div className="product-action">
-                                                                        <Link data-toggle="modal" data-target="#exampleModal"
-                                                                              title="Quick View" href="#"><i
-                                                                            className=" ti-eye"></i><span>Quick Shop</span></Link>
+                                                                       <Link ><i className=" ti-eye"></i><span>Detail 142</span></Link>
                                                                         <Link title="Wishlist" href="#"><i
                                                                             className=" ti-heart "></i><span>Add to Wishlist</span></Link>
                                                                         <Link title="Compare" href="#"><i
