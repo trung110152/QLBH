@@ -112,12 +112,12 @@ export default function ListProduct(){
                                 <div className="nav-main">
 
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                        <li className="nav-item"><Link className="nav-link active" data-toggle="tab"
-                                                                    href="#man" role="tab">Man</Link></li>
-                                        <li className="nav-item"><Link className="nav-link" data-toggle="tab" href="#women"
-                                                                    role="tab">Woman</Link></li>
-                                        <li className="nav-item"><Link className="nav-link" data-toggle="tab" href="#kids"
-                                                                    role="tab">Kids</Link></li>
+                                        <li className="nav-item"><a className="nav-link active" data-toggle="tab"
+                                                                    href="#man" role="tab">Man</a></li>
+                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#women"
+                                                                    role="tab">Woman</a></li>
+                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#kids"
+                                                                    role="tab">Kids</a></li>
                                     </ul>
                                 </div>
                                 <div className="tab-content" id="myTabContent">
@@ -125,16 +125,17 @@ export default function ListProduct(){
                                         <div className="tab-single">
                                             <div className="row">
                                                 {/*product card*/}
-                                                {products.map((blog,ind)=>(
+                                                {products.map((product, ind)=>(
                                                     <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                         <div className="single-product">
                                                             <div className="product-img">
                                                                 <Link to="product-details.html">
                                                                     <img className="default-img"
-                                                                         src={blog.image} alt="#" style={{width:320, height:450}}/>
+                                                                         src={product.image} alt="#" style={{width:320, height:450}}/>
                                                                     <img className="hover-img"
                                                                          src="https://via.placeholder.com/550x750"
                                                                          alt="#"/>
+                                                                    <span className="out-of-stock">Hot</span>
 
                                                                 </Link>
                                                                 <div className="button-head">
@@ -153,9 +154,9 @@ export default function ListProduct(){
                                                                 </div>
                                                             </div>
                                                             <div className="product-content">
-                                                                <h5>{blog.description}</h5>
+                                                                <h5>{product.description}</h5>
                                                                 <div className="product-price">
-                                                                    <span style={{color:"red"}}>{blog.price} $</span>
+                                                                    <span style={{color:"red"}}>{product.price} $</span>
                                                                 </div>
 
                                                             </div>
@@ -169,143 +170,6 @@ export default function ListProduct(){
                                     <div className="tab-pane fade" id="women" role="tabpanel">
                                         <div className="tab-single">
                                             <div className="row">
-                                                <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                                                    <div className="single-product">
-                                                        <div className="product-img">
-                                                            <Link to="product-details.html">
-                                                                <img className="default-img"
-                                                                     src="https://via.placeholder.com/550x750" alt="#"/>
-                                                                    <img className="hover-img"
-                                                                         src="https://via.placeholder.com/550x750"
-                                                                         alt="#"/>
-                                                            </Link>
-                                                            <div className="button-head">
-                                                                <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
-                                                                       title="Quick View" href="#"><i
-                                                                        className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
-                                                                        className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
-                                                                        className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
-                                                                </div>
-                                                                <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Hot Collection</Link>
-                                                            </h3>
-                                                            <div className="product-price">
-                                                                <span>$29.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                                                    <div className="single-product">
-                                                        <div className="product-img">
-                                                            <Link to="product-details.html">
-                                                                <img className="default-img"
-                                                                     src="https://via.placeholder.com/550x750" alt="#"/>
-                                                                    <img className="hover-img"
-                                                                         src="https://via.placeholder.com/550x750"
-                                                                         alt="#"/>
-                                                            </Link>
-                                                            <div className="button-head">
-                                                                <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
-                                                                       title="Quick View" href="#"><i
-                                                                        className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
-                                                                        className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
-                                                                        className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
-                                                                </div>
-                                                                <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Pink Show</Link>
-                                                            </h3>
-                                                            <div className="product-price">
-                                                                <span>$29.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                                                    <div className="single-product">
-                                                        <div className="product-img">
-                                                            <Link to="product-details.html">
-                                                                <img className="default-img"
-                                                                     src="https://via.placeholder.com/550x750" alt="#"/>
-                                                                    <img className="hover-img"
-                                                                         src="https://via.placeholder.com/550x750"
-                                                                         alt="#"/>
-                                                                        <span className="price-dec">30% Off</span>
-                                                            </Link>
-                                                            <div className="button-head">
-                                                                <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
-                                                                       title="Quick View" href="#"><i
-                                                                        className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
-                                                                        className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
-                                                                        className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
-                                                                </div>
-                                                                <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Cap For Women</Link>
-                                                            </h3>
-                                                            <div className="product-price">
-                                                                <span>$29.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="col-xl-3 col-lg-4 col-md-4 col-12">
-                                                    <div className="single-product">
-                                                        <div className="product-img">
-                                                            <Link to="product-details.html">
-                                                                <img className="default-img"
-                                                                     src="https://via.placeholder.com/550x750" alt="#"/>
-                                                                    <img className="hover-img"
-                                                                         src="https://via.placeholder.com/550x750"
-                                                                         alt="#"/>
-                                                            </Link>
-                                                            <div className="button-head">
-                                                                <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
-                                                                       title="Quick View" href="#"><i
-                                                                        className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
-                                                                        className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
-                                                                        className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
-                                                                </div>
-                                                                <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="product-content">
-                                                            <h3><Link to="product-details.html">Polo Dress For Women</Link>
-                                                            </h3>
-                                                            <div className="product-price">
-                                                                <span>$29.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">

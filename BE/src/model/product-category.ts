@@ -4,8 +4,8 @@ import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
 export class ProductCategory {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
+    @Column({type:"int",default:1})
     idProduct: number
-    @Column()
+    @Column({type:"int",default:1})
     idCategory: number
 }

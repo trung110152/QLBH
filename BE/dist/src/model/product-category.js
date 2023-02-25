@@ -18,11 +18,11 @@ __decorate([
     __metadata("design:type", Number)
 ], ProductCategory.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ type: "int", default: 1 }),
     __metadata("design:type", Number)
 ], ProductCategory.prototype, "idProduct", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ type: "int", default: 1 }),
     __metadata("design:type", Number)
 ], ProductCategory.prototype, "idCategory", void 0);
 ProductCategory = __decorate([

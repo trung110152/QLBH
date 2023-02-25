@@ -108,19 +108,19 @@ export default function EditProduct() {
                         <Form>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Name product</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'name'}/>
+                                <Field type="text" className="form-control"  name={'name'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Description</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'description'}/>
+                                <Field type="text" className="form-control"  name={'description'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Price</label>
-                                <Field type="number" className="form-control" id="exampleInput" name={'price'}/>
+                                <Field type="number" className="form-control"  name={'price'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Quantity</label>
-                                <Field type="number" className="form-control" id="exampleInput" name={'totalQuantity'}/>
+                                <Field type="number" className="form-control"  name={'totalQuantity'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Image</label>

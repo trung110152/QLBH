@@ -14,4 +14,7 @@ export class Product {
     totalQuantity: number
     @Column()
     image: string
+
+
+
 }
