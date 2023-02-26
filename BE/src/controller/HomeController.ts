@@ -22,6 +22,15 @@ class HomeController {
         }
     }
 
+    getCate1 = async (req: Request, res: Response) => {
+        try{
+            let response = await productService.getCate1();
+            res.status(200).json(response)
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+    }
+
     findById = async (req: Request, res: Response) => {
         try{
             let id = req.params.id

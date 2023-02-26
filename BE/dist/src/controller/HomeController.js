@@ -17,6 +17,15 @@ class HomeController {
                 res.status(500).json(e.message);
             }
         };
+        this.getCate1 = async (req, res) => {
+            try {
+                let response = await ProductService_1.default.getCate1();
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
         this.findById = async (req, res) => {
             try {
                 let id = req.params.id;
