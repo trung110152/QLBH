@@ -74,7 +74,7 @@ class HomeController {
                 let response1 = await this.productService.update(id, newProduct);
                 if (response1 === 'Updated product') {
                     let pc = {
-                        idProduct: response1.id,
+                        idProduct: id,
                         idCategory: value.idCategory
                     };
                     let response2 = await this.categoryService.update(pc);
