@@ -1,5 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {addProduct, deleteProduct, editProduct, findByIdProduct, getProducts} from "../../services/productsService";
+import {
+    addProduct,
+    deleteProduct,
+    editProduct,
+    findByIdProduct,
+    getProducts
+} from "../../services/productsService";
 
 
 const initialState = {
@@ -14,6 +20,7 @@ const productsSlice = createSlice({
             builder.addCase(getProducts.fulfilled, (state, action) => {
                 state.products = action.payload
             });
+
 
             builder.addCase(findByIdProduct.fulfilled, (state, action) => {
                 state.product = action.payload

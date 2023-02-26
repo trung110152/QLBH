@@ -22,6 +22,7 @@ class HomeController {
         }
     }
 
+
     findById = async (req: Request, res: Response) => {
         try{
             let id = req.params.id
