@@ -76,7 +76,7 @@ export default function ManagerProduct(){
                                         <th scope="col">{product.nameCategory}</th>
                                         <th scope="col">{product.totalQuantity}</th>
                                         <th scope="col" >
-                                            <Link to={`/home/edit-product/${product.id}`}><button className="btn btn-outline-primary">Edit</button></Link>
+                                            <Link to={`/home/edit-product/${product.idProduct}`}><button className="btn btn-outline-primary">Edit</button></Link>
                                             <button className="btn btn-outline-danger" onClick={()=>{
                                                 swal({
                                                     title: "Are you sure?",
@@ -87,7 +87,7 @@ export default function ManagerProduct(){
                                                 })
                                                     .then((willDelete) => {
                                                         if (willDelete) {
-                                                            dispatch(deleteProduct(product.id))
+                                                            dispatch(deleteProduct(product.idProduct))
                                                             swal(`Poof! Deleted ${product.name}!`, {
                                                                 icon: "success",
                                                             })
