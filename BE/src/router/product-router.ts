@@ -4,7 +4,6 @@ import homeController from "../controller/HomeController";
 export const productRouter = Router();
 
 productRouter.get('/', homeController.getAll);
-productRouter.get('/cate1', homeController.getCate1);
 productRouter.post('/', homeController.create);
 productRouter.put('/:id', homeController.update);
 productRouter.delete('/:id', homeController.remove);

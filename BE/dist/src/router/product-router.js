@@ -8,7 +8,6 @@ const express_1 = require("express");
 const HomeController_1 = __importDefault(require("../controller/HomeController"));
 exports.productRouter = (0, express_1.Router)();
 exports.productRouter.get('/', HomeController_1.default.getAll);
-exports.productRouter.get('/cate1', HomeController_1.default.getCate1);
 exports.productRouter.post('/', HomeController_1.default.create);
 exports.productRouter.put('/:id', HomeController_1.default.update);
 exports.productRouter.delete('/:id', HomeController_1.default.remove);

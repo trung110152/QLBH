@@ -8,7 +8,7 @@ class ProductService {
     }
 
     getAll = async () => {
-        let sql =`select p.id as idProduct, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory, c.id as idCategory
+        let sql =`select p.id, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory
                   from product_category pc
                            join product p on pc.idProduct = p.id
                            join category c on pc.idCategory = c.id`;
@@ -19,17 +19,7 @@ class ProductService {
         return products;
     }
 
-    getCate1 = async () => {
-        let sql =`select p.id as idProduct, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory, c.id as idCategory
-                  from product_category pc
-                           join product p on pc.idProduct = p.id
-                           join category c on pc.idCategory = c.id where c.id = 1`;
-        let products = await this.productRepository.query(sql);
-        if (!products){
-            return 'Can not get products'
-        }
-        return products;
-    }
+
 
 
     save = async (value) => {

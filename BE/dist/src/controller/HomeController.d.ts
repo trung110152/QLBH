@@ -5,7 +5,6 @@ declare class HomeController {
     private orderService;
     constructor();
     getAll: (req: Request, res: Response) => Promise<void>;
-    getCate1: (req: Request, res: Response) => Promise<void>;
     findById: (req: Request, res: Response) => Promise<void>;
     create: (req: Request, res: Response) => Promise<void>;
     update: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
