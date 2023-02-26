@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import { useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
 import {editProduct, findByIdProduct} from "../../services/productsService";
 import {useEffect, useState} from "react";
@@ -23,14 +23,13 @@ export default function EditProduct() {
     }, [])
 
 
-    const category = useSelector(state =>{
+    const category = useSelector(state => {
         return state.categories.category
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getCategory())
-    },[]);
-
+    }, []);
 
 
     const handleEdit = async (values) => {
@@ -72,15 +71,19 @@ export default function EditProduct() {
                         console.log(error);
                     },
                     async () => {
-                        await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLs) => {
+                      return   await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLs) => {
                             setUrls(prevState => [...prevState, downloadURLs])
+
                         });
+
                     }
                 );
             });
         }
         Promise.all(promises)
-            .then(() => alert("All images uploaded"))
+            .then(() => swal(`Success!`, {
+                icon: "success",
+            }))
             .catch((err) => console.log(err));
 
     }
@@ -97,9 +100,10 @@ export default function EditProduct() {
                             name: product.name,
                             price: product.price,
                             description: product.description,
-                            totalQuantity:product.totalQuantity,
+                            totalQuantity: product.totalQuantity,
                             image: urls[urls.length - 1],
                         }}
+
                         onSubmit={(values) => {
                             handleEdit(values)
                         }}
@@ -108,19 +112,19 @@ export default function EditProduct() {
                         <Form>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Name product</label>
-                                <Field type="text" className="form-control"  name={'name'}/>
+                                <Field type="text" className="form-control" name={'name'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Description</label>
-                                <Field type="text" className="form-control"  name={'description'}/>
+                                <Field type="text" className="form-control" name={'description'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Price</label>
-                                <Field type="number" className="form-control"  name={'price'}/>
+                                <Field type="number" className="form-control" name={'price'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Quantity</label>
-                                <Field type="number" className="form-control"  name={'totalQuantity'}/>
+                                <Field type="number" className="form-control" name={'totalQuantity'}/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInput" className="form-label">Image</label>
@@ -132,12 +136,12 @@ export default function EditProduct() {
                                         onClick={handleUpload}>Up
                                 </button>
                                 {urls &&
-                                    <><img src={urls[urls.length -1]} alt="" style={{width: 50}}/></>
+                                    <><img src={urls[urls.length - 1]} alt="" style={{width: 50}}/></>
                                 }
                             </div>
                             <div className="mb-3">
-                                <Field as='select' name={'idCategory'} >
-                                    {category !== undefined && category.map((item)=>(
+                                <Field as='select' name={'idCategory'}>
+                                    {category !== undefined && category.map((item) => (
                                         <option value={item.id}>{item.name}</option>
                                     ))
 
@@ -149,6 +153,7 @@ export default function EditProduct() {
                     </Formik>
                 </div>
             </div>
+            <br/>
         </>
     )
 }
