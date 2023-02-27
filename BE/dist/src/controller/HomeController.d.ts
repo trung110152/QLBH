@@ -7,6 +7,7 @@ declare class HomeController {
     getAll: (req: Request, res: Response) => Promise<void>;
     findById: (req: Request, res: Response) => Promise<void>;
     create: (req: Request, res: Response) => Promise<void>;
+    addCategory: (req: Request, res: Response) => Promise<void>;
     update: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
     remove: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
     search: (req: Request, res: Response) => Promise<void>;

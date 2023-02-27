@@ -1,5 +1,6 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import dropdown from "bootstrap/js/src/dropdown";
 
 export default function Navbar(){
     const dispatch = useDispatch();
@@ -30,8 +31,8 @@ export default function Navbar(){
                                     <div className="right-content">
                                         <ul className="list-main">
                                             <li><i className="ti-location-pin"></i> Store location</li>
-                                            <li><i className="ti-alarm-clock"></i> <Link to="#">Daily deal</Link></li>
-                                            <li><i className="ti-user"></i> <Link to="#" >{user.username}</Link></li>
+                                            <li><i className="ti-alarm-clock"></i> <Link  style={{textDecoration: 'none'}} to="#">Daily deal</Link></li>
+                                            <li><i className="ti-user"></i> <Link  style={{textDecoration: 'none'}} to="#" >{user.username}</Link></li>
                                             <li><i className="ti-power-off"></i><a type={'summit'} onClick={()=>{
                                                 localStorage.clear()
                                                 navigate('/')
@@ -50,11 +51,11 @@ export default function Navbar(){
                                 <div className="col-lg-2 col-md-2 col-12">
 
                                     <div className="logo">
-                                        <Link to="index.html"><img src="images/logo.png" alt="logo"/></Link>
+                                        <Link  style={{textDecoration: 'none'}} to="index.html"><img src="images/logo.png" alt="logo"/></Link>
                                     </div>
 
                                     <div className="search-top">
-                                        <div className="top-search"><Link to="#0"><i className="ti-search"></i></Link></div>
+                                        <div className="top-search"><Link  style={{textDecoration: 'none'}} to="#0"><i className="ti-search"></i></Link></div>
 
                                         <div className="search-top">
                                             <form className="search-form">
@@ -70,12 +71,6 @@ export default function Navbar(){
                                 <div className="col-lg-8 col-md-7 col-12">
                                     <div className="search-bar-top">
                                         <div className="search-bar">
-                                            <select>
-                                                <option selected="selected">All Category</option>
-                                                <option>watch</option>
-                                                <option>mobile</option>
-                                                <option>kid’s item</option>
-                                            </select>
                                             <form>
                                                 <input name="search" placeholder="Search Products Here....." type="search"/>
                                                     <button className="btnn"><i className="ti-search"></i></button>
@@ -87,30 +82,30 @@ export default function Navbar(){
                                     <div className="right-bar">
 
                                         <div className="sinlge-bar">
-                                            <Link to="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></Link>
+                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar">
-                                            <Link to="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
+                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar shopping">
-                                            <Link to="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
+                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
 
                                             <div className="shopping-item">
                                                 <div className="dropdown-cart-header">
                                                     <span>2 Items</span>
-                                                    <Link to="#">View Cart</Link>
+                                                    <Link  style={{textDecoration: 'none'}} to="#">View Cart</Link>
                                                 </div>
                                                 <ul className="shopping-list">
                                                     <li>
-                                                        <Link to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
-                                                        <Link  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
-                                                        <h4><Link to="#">Woman Ring</Link></h4>
+                                                        <Link  style={{textDecoration: 'none'}} to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
+                                                        <Link  style={{textDecoration: 'none'}}  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
+                                                        <h4><Link  style={{textDecoration: 'none'}} to="#">Woman Ring</Link></h4>
                                                         <p className="quantity">1x - <span className="amount">$99.00</span></p>
                                                     </li>
                                                     <li>
-                                                        <Link to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
-                                                        <Link  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
-                                                        <h4><Link to="#">Woman Necklace</Link></h4>
+                                                        <Link  style={{textDecoration: 'none'}} to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
+                                                        <Link  style={{textDecoration: 'none'}}  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
+                                                        <h4><Link  style={{textDecoration: 'none'}} to="#">Woman Necklace</Link></h4>
                                                         <p className="quantity">1x - <span className="amount">$35.00</span></p>
                                                     </li>
                                                 </ul>
@@ -119,7 +114,7 @@ export default function Navbar(){
                                                         <span>Total</span>
                                                         <span className="total-amount">$134.00</span>
                                                     </div>
-                                                    <Link to="checkout.html" className="btn animate">Checkout</Link>
+                                                    <Link  style={{textDecoration: 'none'}} to="checkout.html" className="btn animate">Checkout</Link>
                                                 </div>
                                             </div>
 
@@ -140,28 +135,37 @@ export default function Navbar(){
                                                 <div className="navbar-collapse">
                                                     <div className="nav-inner">
                                                         <ul className="nav main-menu menu navbar-nav">
-                                                            <li className="active"><Link to="/home">Home</Link></li>
+                                                            <li className="active"><Link  style={{textDecoration: 'none'}} to="/home" >Home</Link></li>
                                                             {user.role === 'admin' &&
                                                                 <>
-                                                                    <li><Link to="/home/manager-product">Manager Product</Link></li>
-                                                                    <li><Link to="/home/add-product">Add Product</Link></li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product <i className="ti-angle-down"></i></Link>
+                                                                        <ul className="dropdown">
+                                                                            <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Manager Home</Link></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product <i className="ti-angle-down"></i></Link>
+                                                                    <ul className="dropdown">
+                                                                        <li><Link  style={{textDecoration: 'none'}} to="/home/add-category">Add Category</Link></li>
+                                                                        <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Add Home </Link></li>
+                                                                    </ul>
+                                                                    </li>
                                                                 </>
                                                             }
-                                                            <li><Link to="#">Service</Link></li>
-                                                            <li><Link to="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></Link>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Service</Link></li>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></Link>
                                                                 <ul className="dropdown">
-                                                                    <li><Link to="shop-grid.html">Shop Grid</Link></li>
-                                                                    <li><Link to="cart.html">Cart</Link></li>
-                                                                    <li><Link to="checkout.html">Checkout</Link></li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Shop Grid</Link></li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="cart.html">Cart</Link></li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="checkout.html">Checkout</Link></li>
                                                                 </ul>
                                                             </li>
-                                                            <li><Link to="#">Pages</Link></li>
-                                                            <li><Link to="#">Blog<i className="ti-angle-down"></i></Link>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Pages</Link></li>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Blog<i className="ti-angle-down"></i></Link>
                                                                 <ul className="dropdown">
-                                                                    <li><Link to="blog-single-sidebar.html">Blog Single Sidebar</Link></li>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="blog-single-sidebar.html">Blog Single Sidebar</Link></li>
                                                                 </ul>
                                                             </li>
-                                                            <li><Link to="contact.html">Contact Us</Link></li>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="contact.html">Contact Us</Link></li>
                                                         </ul>
                                                     </div>
                                                 </div>

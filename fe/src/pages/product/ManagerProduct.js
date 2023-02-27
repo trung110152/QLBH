@@ -37,7 +37,7 @@ export default function ManagerProduct(){
                     <div className="row">
                         <div className="col-12">
                             <div className="section-title">
-                                <h2>Trending Item</h2>
+                                <h2>List Products</h2>
                             </div>
                         </div>
                     </div>
@@ -48,12 +48,12 @@ export default function ManagerProduct(){
 
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
 
-                                        <li className="nav-item"><button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>{
+                                        <li className="nav-item"><button className="btn btn-outline-secondary my-2 my-sm-0" onClick={()=>{
                                             dispatch(getProducts())
                                         }} >All</button></li>
 
                                         {categories.map((category)=>(
-                                            <li  className="nav-item"><button style={{height:30,fontSize:10}} className=" ml-3  btn btn-outline-success my-2 my-sm-0" onClick={()=>{
+                                            <li  className="nav-item"><button style={{height:30,fontSize:10}} className=" ml-3  btn btn-outline-secondary my-2 my-sm-0" onClick={()=>{
                                                 dispatch(findByName(category.name))
                                             }} >{category.name}</button></li>
                                         ))}
@@ -75,7 +75,7 @@ export default function ManagerProduct(){
                                                             <th scope="col">Price</th>
                                                             <th scope="col">Category</th>
                                                             <th scope="col">Quantity</th>
-                                                            <th scope="col" colSpan="2">Action</th>
+                                                            <th scope="col" colSpan="2" style={{textAlign:"center"}}>Action</th>
                                                         </tr>
                                                         </thead>
                                                         {
@@ -90,7 +90,7 @@ export default function ManagerProduct(){
                                                                     <th scope="col">{product.totalQuantity}</th>
                                                                     <th scope="col" >
                                                                         <Link to={`/home/edit-product/${product.id}`}><button className="btn btn-outline-primary">Edit</button></Link>
-                                                                        <button className="btn btn-outline-danger" onClick={()=>{
+                                                                        <button  className="btn btn-outline-danger" onClick={()=>{
                                                                             swal({
                                                                                 title: "Are you sure?",
                                                                                 text: "Once deleted, you will not be able to recover this imaginary file!",

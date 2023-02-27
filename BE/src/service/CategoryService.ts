@@ -28,6 +28,10 @@ class CategoryService {
         return  'Saved product-category'
     }
 
+    saveCategory = async (category) => {
+        return this.categoryRepository.save(category);
+    }
+
     remove = async (idProduct)=> {
         let pc = await this.product_categoryRepository.findOneBy({idProduct:idProduct});
         if(!pc){

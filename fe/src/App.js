@@ -12,6 +12,7 @@ import MyProducts from "./pages/product/MyProducts";
 import ManagerProduct from "./pages/product/ManagerProduct";
 import ShowCart from "./pages/product/ShowCart";
 import FocusProduct from "./pages/product/FocusProduct";
+import AddCategory from "./pages/product/AddCategory";
 
 function App() {
   // service -> slice -> store -> selector -> useEffect
@@ -31,6 +32,7 @@ function App() {
                       <Route path={''} element={<ListProduct/>}/>
                       <Route path={'manager-product'} element={<ManagerProduct/>}/>
                       <Route path={'add-product'} element={<AddProduct/>}/>
+                      <Route path={'add-category'} element={<AddCategory/>}/>
                       <Route path={'edit-product/:id'} element={<EditProduct/>}/>
                       <Route path={'focusProduct/:id'} element={<FocusProduct/>}/>
                       <Route path={'addCart/:id'} element={<ShowCart/>}/>

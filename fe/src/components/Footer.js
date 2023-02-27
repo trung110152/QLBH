@@ -17,12 +17,12 @@ export default function Navbar(){
                             <div className="col-lg-5 col-md-6 col-12">
                                 <div className="single-footer about">
                                     <div className="logo">
-                                        <a href="index.html"><img src="images/logo2.png" alt="#"/></a>
+                                        <a  style={{textDecoration: 'none'}} href="index.html"><img src="images/logo2.png" alt="#"/></a>
                                     </div>
                                     <p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas
                                         augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
                                         accumsan porttitor, facilisis luctus, metus.</p>
-                                    <p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span>
+                                    <p className="call">Got Question? Call us 24/7<span><a  style={{textDecoration: 'none'}} href="tel:123456789">+0123 456 789</a></span>
                                     </p>
                                 </div>
                             </div>
@@ -30,11 +30,11 @@ export default function Navbar(){
                                 <div className="single-footer links">
                                     <h4>Information</h4>
                                     <ul>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Faq</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                        <li><a href="#">Help</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">About Us</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Faq</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Terms & Conditions</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Contact Us</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Help</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@ export default function Navbar(){
                                 <div className="single-footer links">
                                     <h4>Customer Service</h4>
                                     <ul>
-                                        <li><a href="#">Payment Methods</a></li>
-                                        <li><a href="#">Money-back</a></li>
-                                        <li><a href="#">Returns</a></li>
-                                        <li><a href="#">Shipping</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Payment Methods</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Money-back</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Returns</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Shipping</a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#">Privacy Policy</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -62,10 +62,10 @@ export default function Navbar(){
                                         </ul>
                                     </div>
                                     <ul>
-                                        <li><a href="#"><i className="ti-facebook"></i></a></li>
-                                        <li><a href="#"><i className="ti-twitter"></i></a></li>
-                                        <li><a href="#"><i className="ti-flickr"></i></a></li>
-                                        <li><a href="#"><i className="ti-instagram"></i></a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#"><i className="ti-facebook"></i></a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#"><i className="ti-twitter"></i></a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#"><i className="ti-flickr"></i></a></li>
+                                        <li><a  style={{textDecoration: 'none'}} href="#"><i className="ti-instagram"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@ export default function Navbar(){
                             <div className="row">
                                 <div className="col-lg-6 col-12">
                                     <div className="left">
-                                        <p>Copyright © 2020 <a href="http://www.wpthemesgrid.com"
+                                        <p>Copyright © 2020 <a  style={{textDecoration: 'none'}} href="http://www.wpthemesgrid.com"
                                                                target="_blank">Wpthemesgrid</a> - All Rights Reserved.
                                         </p>
                                     </div>

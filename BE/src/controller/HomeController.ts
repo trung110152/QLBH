@@ -2,6 +2,8 @@ import {Request, Response} from "express";
 import productService from "../service/ProductService";
 import categoryService from "../service/CategoryService";
 import orderService from "../service/OrderService";
+import {productRouter} from "../router/product-router";
+import CategoryService from "../service/CategoryService";
 class HomeController {
     private productService;
     private categoryService;
@@ -64,6 +66,16 @@ class HomeController {
 
     }
 
+    addCategory = async (req: Request, res: Response) => {
+        try {
+
+            let newCategory = await CategoryService.saveCategory(req.body)
+            res.status(200).json(newCategory);
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+    }
+
     update = async (req: Request, res: Response) => {
         try{
             let id = req.params.id;
@@ -110,6 +122,7 @@ class HomeController {
 
 
     }
+
 
     search = async (req: Request, res: Response) => {
         try{

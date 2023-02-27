@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const ProductService_1 = __importDefault(require("../service/ProductService"));
 const CategoryService_1 = __importDefault(require("../service/CategoryService"));
 const OrderService_1 = __importDefault(require("../service/OrderService"));
+const CategoryService_2 = __importDefault(require("../service/CategoryService"));
 class HomeController {
     constructor() {
         this.getAll = async (req, res) => {
@@ -52,6 +53,15 @@ class HomeController {
                     let response2 = await CategoryService_1.default.save(pc);
                     res.status(200).json(response2);
                 }
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
+        this.addCategory = async (req, res) => {
+            try {
+                let newCategory = await CategoryService_2.default.saveCategory(req.body);
+                res.status(200).json(newCategory);
             }
             catch (e) {
                 res.status(500).json(e.message);

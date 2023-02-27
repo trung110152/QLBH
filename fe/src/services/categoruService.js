@@ -8,3 +8,12 @@ export const getCategory = createAsyncThunk(
         return res.data;
     }
 )
+
+export const addCategory = createAsyncThunk(
+    'category/addCategory',
+    async (data)=>{
+        await customAxios.post('products/addCategories',data);
+        const res = await customAxios.get('products/getCategories');
+        return res.data;
+    }
+)

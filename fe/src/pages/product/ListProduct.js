@@ -47,7 +47,7 @@ export default function ListProduct(){
                                                 <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
                                                 <p>Maboriosam in a nesciung eget magnae dapibus disting tloctio in the find it pereri odiy maboriosm.</p>
                                                 <div className="button">
-                                                    <Link href="#" className="btn">Shop Now!</Link>
+                                                    <Link  style={{textDecoration: 'none'}} href="#" className="btn">Shop Now!</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -68,7 +68,7 @@ export default function ListProduct(){
                                     <div className="content">
                                         <p>Man's Collectons</p>
                                         <h3>Summer travel collection</h3>
-                                        <Link to="#">Discover Now</Link>
+                                        <Link  style={{textDecoration: 'none'}} to="#">Discover Now</Link>
                                     </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ export default function ListProduct(){
                                     <div className="content">
                                         <p>Bag Collectons</p>
                                         <h3>Awesome Bag 2020</h3>
-                                        <Link to="#">Shop Now</Link>
+                                        <Link  style={{textDecoration: 'none'}} to="#">Shop Now</Link>
                                     </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ export default function ListProduct(){
                                     <div className="content">
                                         <p>Flash Sale</p>
                                         <h3>Mid Season  Up to <span>40%</span> Off</h3>
-                                        <Link to="#">Discover Now</Link>
+                                        <Link  style={{textDecoration: 'none'}} to="#">Discover Now</Link>
                                     </div>
                             </div>
                         </div>
@@ -112,11 +112,11 @@ export default function ListProduct(){
                                 <div className="nav-main">
 
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                        <li className="nav-item"><a className="nav-link active" data-toggle="tab"
+                                        <li className="nav-item"><a  style={{textDecoration: 'none'}} className="nav-link active" data-toggle="tab"
                                                                     href="#man" role="tab">Man</a></li>
-                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#women"
+                                        <li className="nav-item"><a  style={{textDecoration: 'none'}} className="nav-link" data-toggle="tab" href="#women"
                                                                     role="tab">Woman</a></li>
-                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#kids"
+                                        <li className="nav-item"><a  style={{textDecoration: 'none'}} className="nav-link" data-toggle="tab" href="#kids"
                                                                     role="tab">Kids</a></li>
                                     </ul>
                                 </div>
@@ -124,12 +124,11 @@ export default function ListProduct(){
                                     <div className="tab-pane fade show active" id="man" role="tabpanel">
                                         <div className="tab-single">
                                             <div className="row">
-                                                {/*product card*/}
                                                 {products.map((product, ind)=>(
                                                     <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                         <div className="single-product">
                                                             <div className="product-img">
-                                                                <Link to={`/home/focusProduct/${product.id}`}>
+                                                                <Link  style={{textDecoration: 'none'}} to={`/home/focusProduct/${product.id}`}>
                                                                     <img className="default-img"
                                                                          src={product.image} alt="#" style={{width:320, height:450}}/>
                                                                     <img className="hover-img"
@@ -140,16 +139,16 @@ export default function ListProduct(){
                                                                 </Link>
                                                                 <div className="button-head">
                                                                     <div className="product-action">
-                                                                       <Link ><i className=" ti-eye"></i><span>Detail 142</span></Link>
-                                                                        <Link title="Wishlist" href="#"><i
+                                                                       <Link  style={{textDecoration: 'none'}} ><i className=" ti-eye"></i><span>Detail 142</span></Link>
+                                                                        <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                             className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                        <Link title="Compare" href="#"><i
+                                                                        <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                             className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                     </div>
                                                                     <div className="product-action-2">
-                                                                        <Link  to="/home/addCart">Add to cart</Link>
+                                                                        <Link  style={{textDecoration: 'none'}}  to="/home/addCart">Add to cart</Link>
                                                                         <span> or </span>
-                                                                        <Link  to="#" style={{color: "red"}}>Buy now</Link>
+                                                                        <Link  style={{textDecoration: 'none'}}  to="#" style={{color: "red"}}>Buy now</Link>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -173,7 +172,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -183,21 +182,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Black Sunglass For
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Black Sunglass For
                                                                 Women</Link></h3>
                                                             <div className="product-price">
                                                                 <span className="old">$60.00</span>
@@ -215,7 +214,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -224,21 +223,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Hot Collection</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Hot Collection</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -249,7 +248,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -258,21 +257,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Pink Show</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Pink Show</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -283,7 +282,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -292,21 +291,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -317,7 +316,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -327,21 +326,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Pant Collectons</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Pant Collectons</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -352,7 +351,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -361,21 +360,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -386,7 +385,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -396,21 +395,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Cap For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Cap For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -421,7 +420,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -430,21 +429,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Polo Dress For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Polo Dress For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -455,7 +454,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -465,21 +464,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Black Sunglass For
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Black Sunglass For
                                                                 Women</Link></h3>
                                                             <div className="product-price">
                                                                 <span className="old">$60.00</span>
@@ -497,7 +496,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -506,21 +505,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Hot Collection</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Hot Collection</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -531,7 +530,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -540,21 +539,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Pink Show</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Pink Show</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -565,7 +564,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -574,21 +573,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -599,7 +598,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -609,21 +608,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Pant Collectons</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Pant Collectons</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -634,7 +633,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -643,21 +642,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -668,7 +667,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -678,21 +677,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Cap For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Cap For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -703,7 +702,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -712,21 +711,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Polo Dress For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Polo Dress For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -737,7 +736,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -747,21 +746,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Black Sunglass For
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Black Sunglass For
                                                                 Women</Link></h3>
                                                             <div className="product-price">
                                                                 <span className="old">$60.00</span>
@@ -779,7 +778,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -788,21 +787,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Hot Collection</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Hot Collection</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -813,7 +812,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -822,21 +821,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Pink Show</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Pink Show</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -847,7 +846,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -856,21 +855,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -881,7 +880,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -891,21 +890,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Pant Collectons</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Pant Collectons</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -916,7 +915,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -925,21 +924,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -950,7 +949,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -960,21 +959,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Cap For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Cap For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -985,7 +984,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -994,21 +993,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Polo Dress For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Polo Dress For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1019,7 +1018,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1029,21 +1028,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Black Sunglass For
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Black Sunglass For
                                                                 Women</Link></h3>
                                                             <div className="product-price">
                                                                 <span className="old">$60.00</span>
@@ -1061,7 +1060,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1070,21 +1069,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Hot Collection</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Hot Collection</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1095,7 +1094,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1104,21 +1103,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Pink Show</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Pink Show</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1129,7 +1128,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1138,21 +1137,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1163,7 +1162,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1173,21 +1172,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Women Pant Collectons</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Women Pant Collectons</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1198,7 +1197,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1207,21 +1206,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Bags
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Bags
                                                                 Collection</Link></h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1232,7 +1231,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1242,21 +1241,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Awesome Cap For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Awesome Cap For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1267,7 +1266,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1276,21 +1275,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Polo Dress For Women</Link>
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Polo Dress For Women</Link>
                                                             </h3>
                                                             <div className="product-price">
                                                                 <span>$29.00</span>
@@ -1301,7 +1300,7 @@ export default function ListProduct(){
                                                 <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                     <div className="single-product">
                                                         <div className="product-img">
-                                                            <Link to="product-details.html">
+                                                            <Link  style={{textDecoration: 'none'}} to="product-details.html">
                                                                 <img className="default-img"
                                                                      src="https://via.placeholder.com/550x750" alt="#"/>
                                                                     <img className="hover-img"
@@ -1311,21 +1310,21 @@ export default function ListProduct(){
                                                             </Link>
                                                             <div className="button-head">
                                                                 <div className="product-action">
-                                                                    <Link data-toggle="modal" data-target="#exampleModal"
+                                                                    <Link  style={{textDecoration: 'none'}} data-toggle="modal" data-target="#exampleModal"
                                                                        title="Quick View" href="#"><i
                                                                         className=" ti-eye"></i><span>Quick Shop</span></Link>
-                                                                    <Link title="Wishlist" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Wishlist" href="#"><i
                                                                         className=" ti-heart "></i><span>Add to Wishlist</span></Link>
-                                                                    <Link title="Compare" href="#"><i
+                                                                    <Link  style={{textDecoration: 'none'}} title="Compare" href="#"><i
                                                                         className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                 </div>
                                                                 <div className="product-action-2">
-                                                                    <Link title="Add to cart" href="#">Add to cart</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} title="Add to cart" href="#">Add to cart</Link>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h3><Link to="product-details.html">Black Sunglass For
+                                                            <h3><Link  style={{textDecoration: 'none'}} to="product-details.html">Black Sunglass For
                                                                 Women</Link></h3>
                                                             <div className="product-price">
                                                                 <span className="old">$60.00</span>
