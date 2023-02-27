@@ -129,7 +129,7 @@ export default function ListProduct(){
                                                     <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                         <div className="single-product">
                                                             <div className="product-img">
-                                                                <Link to="product-details.html">
+                                                                <Link to={`/home/focusProduct/${product.id}`}>
                                                                     <img className="default-img"
                                                                          src={product.image} alt="#" style={{width:320, height:450}}/>
                                                                     <img className="hover-img"

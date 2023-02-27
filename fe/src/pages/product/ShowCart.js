@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-export default function AddCart(){
+export default function ShowCart(){
     return(
         <>
             <header className="header shop">

@@ -1,6 +1,5 @@
 
 import './App.css';
-import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import {Route, Routes} from "react-router";
 import Register from "./pages/Register";
@@ -11,7 +10,8 @@ import {useDispatch, useSelector} from "react-redux";
 import EditProduct from "./pages/product/EditProduct";
 import MyProducts from "./pages/product/MyProducts";
 import ManagerProduct from "./pages/product/ManagerProduct";
-import AddCart from "./pages/product/AddCart";
+import ShowCart from "./pages/product/ShowCart";
+import FocusProduct from "./pages/product/FocusProduct";
 
 function App() {
   // service -> slice -> store -> selector -> useEffect
@@ -28,12 +28,13 @@ function App() {
             {
               user !== 'Username is not existed' && user !== 'Password is wrong'?
                   <Route path={'home'} element={<Home/>}>
-                    <Route path={''} element={<ListProduct/>}/>
-                    <Route path={'manager-product'} element={<ManagerProduct/>}/>
-                    <Route path={'add-product'} element={<AddProduct/>}/>
-                    <Route path={'edit-product/:id'} element={<EditProduct/>}/>
-                    <Route path={'addCart/:id'} element={<AddCart/>}/>
-                    <Route path={'my-products'} element={<MyProducts/>}/>
+                      <Route path={''} element={<ListProduct/>}/>
+                      <Route path={'manager-product'} element={<ManagerProduct/>}/>
+                      <Route path={'add-product'} element={<AddProduct/>}/>
+                      <Route path={'edit-product/:id'} element={<EditProduct/>}/>
+                      <Route path={'focusProduct/:id'} element={<FocusProduct/>}/>
+                      <Route path={'addCart/:id'} element={<ShowCart/>}/>
+                      <Route path={'my-products'} element={<MyProducts/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }
