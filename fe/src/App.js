@@ -34,9 +34,8 @@ function App() {
                       <Route path={'add-product'} element={<AddProduct/>}/>
                       <Route path={'add-category'} element={<AddCategory/>}/>
                       <Route path={'edit-product/:id'} element={<EditProduct/>}/>
-                      <Route path={'focusProduct/:id'} element={<FocusProduct/>}/>
-                      <Route path={'addCart/:id'} element={<ShowCart/>}/>
-                      <Route path={'my-products'} element={<MyProducts/>}/>
+                      <Route path={'focus-product/:id'} element={<FocusProduct/>}/>
+                      <Route path={'show-cart'} element={<ShowCart/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }

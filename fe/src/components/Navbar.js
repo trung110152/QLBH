@@ -90,7 +90,7 @@ export default function Navbar(){
                                         <div className="sinlge-bar shopping">
                                             <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
 
-                                            <div className="shopping-item">
+                                            <div className="shopping-item" >
                                                 <div className="dropdown-cart-header">
                                                     <span>2 Items</span>
                                                     <Link  style={{textDecoration: 'none'}} to="#">View Cart</Link>
