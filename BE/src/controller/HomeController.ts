@@ -113,7 +113,7 @@ class HomeController {
 
     search = async (req: Request, res: Response) => {
         try{
-            let search = req.query.name;
+            let search = req.query.search;
             let response = await productService.findByName(search);
             res.status(200).json(response)
         }catch (e) {

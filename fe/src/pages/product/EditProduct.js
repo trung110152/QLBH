@@ -34,6 +34,7 @@ export default function EditProduct() {
 
     const handleEdit = async (values) => {
         let newProduct = {...values};
+        newProduct.image = urls[urls.length-1]
         await dispatch(editProduct(newProduct));
         swal(`Edited ${newProduct.name} success!`, {
             icon: "success",
@@ -73,7 +74,6 @@ export default function EditProduct() {
                     async () => {
                       return   await getDownloadURL(uploadTask.snapshot.ref).then((downloadURLs) => {
                             setUrls(prevState => [...prevState, downloadURLs])
-
                         });
 
                     }
@@ -95,14 +95,9 @@ export default function EditProduct() {
                 <div className="offset-3 col-6 mt-5">
                     <h1 style={{textAlign: 'center'}}>Edit product</h1>
                     <Formik
-                        initialValues={{
-                            id: id,
-                            name: product.name,
-                            price: product.price,
-                            description: product.description,
-                            totalQuantity: product.totalQuantity,
-                            image: urls[urls.length - 1],
-                        }}
+                        initialValues={
+                            product
+                        }
 
                         onSubmit={(values) => {
                             handleEdit(values)
