@@ -4,6 +4,7 @@ import {deleteProduct, findByName, getProducts} from "../../services/productsSer
 import {Link, useNavigate} from "react-router-dom";
 import swal from 'sweetalert';
 import button from "bootstrap/js/src/button";
+import {getCategory} from "../../services/categoruService";
 
 
 
@@ -19,7 +20,14 @@ export default function ManagerProduct(){
         })
     },[]);
 
+    const categories = useSelector(state => {
+        return   state.categories.category
+    })
 
+    useEffect(()=>{
+        dispatch(getCategory()).then(()=>{
+        })
+    },[]);
 
     return(
         <>
@@ -36,18 +44,20 @@ export default function ManagerProduct(){
                     <div className="row">
                         <div className="col-12">
                             <div className="product-info">
-                                <div className="nav-main">
+                                <div className="nav-main" style={{marginBottom:20}}>
 
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
-                                        <li className="nav-item"><button className="btn btn-outline-primary" onClick={()=>{
-                                            dispatch(findByName('Guci'))
-                                        }} >Guci</button></li>
-                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#Amber"
-                                                                    role="tab">Amber</a></li>
-                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#Dior"
-                                                                    role="tab">Dior</a></li>
-                                        <li className="nav-item"><a className="nav-link" data-toggle="tab" href="#Chanel"
-                                                                    role="tab">Chanel</a></li>
+
+                                        <li className="nav-item"><button className="btn btn-outline-success my-2 my-sm-0" onClick={()=>{
+                                            dispatch(getProducts())
+                                        }} >All</button></li>
+
+                                        {categories.map((category)=>(
+                                            <li  className="nav-item"><button style={{height:30,fontSize:10}} className=" ml-3  btn btn-outline-success my-2 my-sm-0" onClick={()=>{
+                                                dispatch(findByName(category.name))
+                                            }} >{category.name}</button></li>
+                                        ))}
+
                                     </ul>
                                 </div>
                                 <div className="tab-content" id="myTabContent">
