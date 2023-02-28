@@ -46,19 +46,18 @@ export default function HomeProduct(){
 
     return(
         <>
-            <section className="hero-slider">
-                <div className="single-slider">
-                    <div className="container">
+            <section className="hero-slider" >
+                <div className="single-slider" style={{backgroundImage:'https://theperfume.vn/wp-content/uploads/2021/06/nuoc-hoa-nu-huong-hoa-hong.jpeg'}}>
+                    <div className="container" >
                         <div className="row no-gutters">
                             <div className="col-lg-9 offset-lg-3 col-12">
                                 <div className="text-inner">
                                     <div className="row">
                                         <div className="col-lg-7 col-12">
                                             <div className="hero-text">
-                                                <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                                <p>Maboriosam in a nesciung eget magnae dapibus disting tloctio in the find it pereri odiy maboriosm.</p>
-                                                <div className="button">
-                                                    <Link  style={{textDecoration: 'none'}} href="#" className="btn">Shop Now!</Link>
+                                                <h1>Perfume</h1>
+                                                <div className="mb-5 button">
+                                                    <Link  style={{textDecoration: 'none'}} to="my-product" className="btn">Shop Now!</Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,31 +74,26 @@ export default function HomeProduct(){
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-12">
                             <div className="single-banner">
-                                <img src="https://via.placeholder.com/600x370" alt="#"/>
+                                <img src="/images/1.png" alt="#"/>
                                     <div className="content">
-                                        <p>Man's Collectons</p>
-                                        <h3>Summer travel collection</h3>
                                         <Link  style={{textDecoration: 'none'}} to="#">Discover Now</Link>
                                     </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 col-12">
                             <div className="single-banner">
-                                <img src="https://via.placeholder.com/600x370" alt="#"/>
+                                <img src="/images/2.png" alt="#"/>
                                     <div className="content">
-                                        <p>Bag Collectons</p>
-                                        <h3>Awesome Bag 2020</h3>
-                                        <Link  style={{textDecoration: 'none'}} to="#">Shop Now</Link>
+                                        <Link  style={{textDecoration: 'none'}} to="my-product">Shop Now</Link>
                                     </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-12">
 
                             <div className="single-banner tab-height">
-                                <img src="https://via.placeholder.com/600x370" alt="#"/>
+                                <img src="/images/3.png" alt="#"/>
                                     <div className="content">
                                         <p>Flash Sale</p>
-                                        <h3>Mid Season  Up to <span>40%</span> Off</h3>
                                         <Link  style={{textDecoration: 'none'}} to="#">Discover Now</Link>
                                     </div>
                             </div>
