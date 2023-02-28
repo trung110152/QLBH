@@ -4,8 +4,7 @@ import {useEffect} from "react";
 import {login} from "../services/userService";
 import {Field, Form, Formik} from "formik";
 import swal from "sweetalert";
-import data from "bootstrap/js/src/dom/data";
-import {addOrder} from "../services/orderService";
+
 
 export default function Login() {
     const dispatch = useDispatch();
