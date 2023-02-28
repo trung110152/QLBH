@@ -4,25 +4,11 @@ import {useEffect} from "react";
 import {login} from "../services/userService";
 import {Field, Form, Formik} from "formik";
 import swal from "sweetalert";
-import data from "bootstrap/js/src/dom/data";
 import {addOrder} from "../services/orderService";
 
 export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(state=>{
-        return state.user.currentUser
-    })
-    let order ={
-        idUser: user.idUser,
-        receiver: user.username,
-        address:'HD',
-        phone: 0,
-        time: '2023-02-24 00:29:52',
-        totalPoint:0,
-        status:'buying'
-    }
-
     const handleLogin = async (values) =>{
         await dispatch(login(values)).then((e)=>{
             if(e.payload !== 'Username is not existed' && e.payload !== 'Password is wrong'){
@@ -30,21 +16,29 @@ export default function Login() {
                     icon: "success",
                 })
                 navigate('/home')
-                dispatch(addOrder(order))
-
+                // dispatch(addOrder(order))
 
             }else{
                 navigate('/')
             }
 
-
         })
     }
-
-    useEffect(() => {
-        localStorage.clear()
-    }, [])
-
+    const user = useSelector(state=>{
+        return state.user.currentUser
+    })
+    // useEffect(() => {
+    //     localStorage.clear()
+    // }, [])
+    // let order ={
+    //     idUser: user.idUser,
+    //     receiver: user.username,
+    //     address:'HD',
+    //     phone: 0,
+    //     time: '2023-02-24 00:29:52',
+    //     totalPoint:0,
+    //     status:'buying'
+    // }
     return(
         <>
             <div className="row">
