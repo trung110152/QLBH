@@ -13,15 +13,7 @@ export default function Login() {
     const user = useSelector(state=>{
         return state.user.currentUser
     })
-    let order ={
-        idUser: user.idUser,
-        receiver: user.username,
-        address:'HD',
-        phone: 0,
-        time: '2023-02-24 00:29:52',
-        totalPoint:0,
-        status:'buying'
-    }
+
 
     const handleLogin = async (values) =>{
         await dispatch(login(values)).then((e)=>{
@@ -30,9 +22,6 @@ export default function Login() {
                     icon: "success",
                 })
                 navigate('/home')
-                dispatch(addOrder(order))
-
-
             }else{
                 navigate('/')
             }
