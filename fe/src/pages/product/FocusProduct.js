@@ -23,7 +23,6 @@ export default function FocusProduct() {
     const [total, setTotal] = useState();
     const [cart, setCart] = useState({
         idProduct: id,
-        idUser: user.idUser,
     });
 
 
@@ -55,7 +54,7 @@ export default function FocusProduct() {
                         ...cart,
                         total: totall,
                         quantity: quantity,
-                        idOrder: data.payload[0].id
+                        idOrder: data.payload.id
                     })
                 })
             }}/></span></p>

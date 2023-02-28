@@ -14,8 +14,8 @@ class UserService {
         let userCheck = await this.userRepository.findOneBy({username: user.username})
         if (!userCheck) {
             user.password = await bcrypt.hash(user.password,10); /// mã hóa mật khẩu
-            this.userRepository.save(user);
-            return 'Register success'
+           let res =  this.userRepository.save(user);
+            return res
         }
         return 'Username registered';
     }

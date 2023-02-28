@@ -1,4 +1,4 @@
-import {addCart, addOrder, findByStatus, showCart} from "../../services/orderService";
+import {addCart, addOrder, editOrder, findByStatus, showCart} from "../../services/orderService";
 import {createSlice} from "@reduxjs/toolkit";
 
 
@@ -12,6 +12,10 @@ const orderSlice = createSlice({
         initialState,
         extraReducers: builder => {
             builder.addCase(addOrder.fulfilled, (state, action) => {
+                state.order = action.payload
+
+            });
+            builder.addCase(editOrder.fulfilled, (state, action) => {
                 state.order = action.payload
 
             });

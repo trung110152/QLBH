@@ -12,6 +12,4 @@ export class ProductOrder{
     idProduct: number
     @Column()
     idOrder: number
-    @Column()
-    idUser: number
 }

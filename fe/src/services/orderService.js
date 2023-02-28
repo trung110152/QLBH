@@ -8,12 +8,19 @@ export const addOrder = createAsyncThunk(
         return res.data;
     }
 )
+export const editOrder = createAsyncThunk(
+    'order/editOrder',
+    async (data)=>{
+        const res = await customAxios.put('orders/editOrder/'+data.id,data);
+        return res.data;
+    }
+)
+
 export const findByStatus = createAsyncThunk(
     'order/findByStatus',
     async (data)=>{
-
         const res = await customAxios.get(`orders/find-by-status/${data}`);
-        return res.data;
+        return res.data[0];
     }
 )
 export const addCart = createAsyncThunk(

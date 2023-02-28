@@ -33,10 +33,6 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], ProductOrder.prototype, "idOrder", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], ProductOrder.prototype, "idUser", void 0);
 ProductOrder = __decorate([
     (0, typeorm_1.Entity)()
 ], ProductOrder);

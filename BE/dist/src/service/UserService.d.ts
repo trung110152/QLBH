@@ -1,7 +1,7 @@
 declare class UserService {
     private userRepository;
     constructor();
-    register: (user: any) => Promise<"Register success" | "Username registered">;
+    register: (user: any) => Promise<any>;
     getAll: () => Promise<any>;
     checkUser: (user: any) => Promise<"Username is not existed" | "Password is wrong" | {
         username: any;

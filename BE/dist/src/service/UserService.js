@@ -13,8 +13,8 @@ class UserService {
             let userCheck = await this.userRepository.findOneBy({ username: user.username });
             if (!userCheck) {
                 user.password = await bcrypt_1.default.hash(user.password, 10);
-                this.userRepository.save(user);
-                return 'Register success';
+                let res = this.userRepository.save(user);
+                return res;
             }
             return 'Username registered';
         };
