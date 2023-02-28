@@ -12,10 +12,10 @@ Version:1.0
 	02. Sticky Header JS
 	03. Search JS
 	04. Slider Range JS
-	05. Home Slider JS
+	05. HomeProduct Slider JS
 	06. Popular Slider JS
 	07. Quick View Slider JS
-	08. Home Slider 4 JS
+	08. HomeProduct Slider 4 JS
 	09. CountDown
 	10. Flex Slider JS
 	11. Cart Plus Minus Button
@@ -81,7 +81,7 @@ Version:1.0
 		} );
 		
 		/*=======================
-		  Home Slider JS
+		  HomeProduct Slider JS
 		=========================*/ 
 		$('.home-slider').owlCarousel({
 			items:1,
@@ -167,7 +167,7 @@ Version:1.0
 		});
 		
 		/*===========================
-		  Home Slider 4 JS
+		  HomeProduct Slider 4 JS
 		=============================*/ 
 		$('.home-slider-4').owlCarousel({
 			items:1,

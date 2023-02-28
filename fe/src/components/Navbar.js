@@ -151,7 +151,7 @@ export default function Navbar(){
                                                                     </li>
                                                                 </>
                                                             }
-                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Service</Link></li>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="my-product">Products</Link></li>
                                                             <li><Link  style={{textDecoration: 'none'}} to="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></Link>
                                                                 <ul className="dropdown">
                                                                     <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Shop Grid</Link></li>
