@@ -88,7 +88,7 @@ export default function Navbar(){
                                             <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar shopping">
-                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
+                                            <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${user.idUser}`} className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
 
                                             <div className="shopping-item" >
                                                 <div className="dropdown-cart-header">

@@ -23,3 +23,11 @@ export const addCart = createAsyncThunk(
         return res.data;
     }
 )
+
+export const showCart = createAsyncThunk(
+    'order/showCart',
+    async (data)=>{
+        const res = await customAxios.get(`orders/show-cart/${data}`);
+        return res.data;
+    }
+)
