@@ -4,23 +4,25 @@ import {useEffect} from "react";
 import {login} from "../services/userService";
 import {Field, Form, Formik} from "formik";
 import swal from "sweetalert";
-
+import data from "bootstrap/js/src/dom/data";
+import {addOrder} from "../services/orderService";
 
 export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(state => {
+    const user = useSelector(state=>{
         return state.user.currentUser
     })
 
-    const handleLogin = async (values) => {
-        await dispatch(login(values)).then((e) => {
-            if (e.payload !== 'Username is not existed' && e.payload !== 'Password is wrong') {
+
+    const handleLogin = async (values) =>{
+        await dispatch(login(values)).then((e)=>{
+            if(e.payload !== 'Username is not existed' && e.payload !== 'Password is wrong'){
                 swal(`Well come, "${e.payload.username}"`, {
                     icon: "success",
                 })
                 navigate('/home')
-            } else {
+            }else{
                 navigate('/')
             }
 
@@ -32,14 +34,14 @@ export default function Login() {
         localStorage.clear()
     }, [])
 
-    return (
+    return(
         <>
             <div className="row">
                 <div className="offset-3 col-6 mt-5">
-                    <h1 style={{textAlign: 'center'}}>Login</h1>
+                    <h1 style={{textAlign:'center' }}>Login</h1>
                     <Formik
-                        initialValues={{username: '', password: ''}}
-                        onSubmit={(values) => {
+                        initialValues={{username:'', password:''}}
+                        onSubmit={(values)=>{
                             handleLogin(values).then()
                         }}>
                         <Form>
@@ -49,15 +51,14 @@ export default function Login() {
                                 {
                                     user === 'Username is not existed' &&
                                     <>
-                                        <h6 style={{color: "red"}}>Username is not existed</h6>
+                                    <h6 style={{color: "red"}}>Username is not existed</h6>
                                     </>
                                 }
                             </div>
 
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                <Field type="password" className="form-control" id="exampleInputPassword1"
-                                       name={'password'}/>
+                                <Field type="password" className="form-control" id="exampleInputPassword1" name={'password'}/>
                                 {
                                     user === 'Password is wrong' &&
                                     <>
@@ -67,9 +68,7 @@ export default function Login() {
                             </div>
 
                             <button type="submit" className="btn btn-primary" style={{marginRight: 10}}>Login</button>
-                            <Link to={'/register'}>
-                                <button type="submit" className="btn btn-secondary">register</button>
-                            </Link>
+                            <Link to={'/register'} ><button type="submit" className="btn btn-secondary">register</button></Link>
                         </Form>
                     </Formik>
 
