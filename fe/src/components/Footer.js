@@ -9,7 +9,6 @@ export default function Navbar(){
     })
     return(
         <>
-
             <footer className="footer">
                 <div className="footer-top section">
                     <div className="container">
@@ -17,7 +16,7 @@ export default function Navbar(){
                             <div className="col-lg-5 col-md-6 col-12">
                                 <div className="single-footer about">
                                     <div className="logo">
-                                        <a  style={{textDecoration: 'none'}} href="index.html"><img src="images/logo2.png" alt="#"/></a>
+                                        <a  style={{textDecoration: 'none'}} href="/home"><img style={{width:100}} src="/images/logo3.png" alt="#"/></a>
                                     </div>
                                     <p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas
                                         augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,

@@ -40,8 +40,8 @@ export default function ProductList() {
                         <div className="col-12">
                             <div className="bread-inner">
                                 <ul className="bread-list">
-                                    <li><a href="index1.html">Home<i className="ti-arrow-right"></i></a></li>
-                                    <li className="active"><a href="blog-single.html">Shop Grid</a></li>
+                                    <li><Link style={{textDecoration:"none"}} to="/home">Home<i className="ti-arrow-right"></i></Link></li>
+                                    <li className="active">Products</li>
                                 </ul>
                             </div>
                         </div>
@@ -168,6 +168,14 @@ export default function ProductList() {
                                             </div>
                                             <div className="single-shorter">
                                                 <label>Sort By </label>
+                                                <form className="form-inline my-2 my-lg-0">
+                                                    <input  style={{marginLeft:550, border:10}} className="form-control mr-sm-2" type="search"
+                                                           placeholder="Search" aria-label="Search"/>
+                                                        <button className="  btn btn-outline-secondary my-2 my-sm-0 "
+                                                                type="submit">Search
+                                                        </button>
+                                                </form>
+
                                             </div>
                                         </div>
 
