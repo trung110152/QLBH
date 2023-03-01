@@ -23,7 +23,7 @@ export default function ShowCart(){
         dispatch(showCart(idOrder))
     },[])
 
-
+let totalPoint = 0;
 
 
     return(
@@ -38,6 +38,7 @@ export default function ShowCart(){
                     <td>Action</td>
                 </tr>
                 {carts !== 'Saved cart' && carts.map(item=>(
+                    totalPoint += item.total,
                     <tr>
                         <td><img src={item.image} alt="" style={{width:50}}/></td>
                         <td>{item.description}</td>
@@ -49,7 +50,7 @@ export default function ShowCart(){
                     </tr>
                 ))}
             </table>
-            <p style={{marginLeft:980}}>Total point</p>
+            <p style={{marginLeft:800, color: "red"}}>Total point: {totalPoint} $</p>
             <hr/>
             <Formik
             initialValues={{
@@ -57,10 +58,12 @@ export default function ShowCart(){
                 receiver:'',
                 address:'',
                 phone:'',
-                time:''
+                time:'',
+                totalPoint: totalPoint
             }}
             onSubmit={(values)=>{
-                values.status = 'loading'
+                values.status = 'loading';
+                values.totalPoint = totalPoint;
                 dispatch(editOrder(values)).then(()=>{
                     let order = {
                         idUser: user.idUser,

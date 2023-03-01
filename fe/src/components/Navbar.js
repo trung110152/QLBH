@@ -94,7 +94,7 @@ export default function Navbar(){
                                             <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar">
-                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
+                                            <Link  style={{textDecoration: 'none'}} to={`/home/purchase-order/${user.idUser}`} className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar shopping">
                                             <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${order.id}`} className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>

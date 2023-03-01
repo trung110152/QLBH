@@ -8,6 +8,7 @@ declare class OrderController {
     addOrder: (req: Request, res: Response) => Promise<void>;
     editOrder: (req: Request, res: Response) => Promise<void>;
     findByStatus: (req: Request, res: Response) => Promise<void>;
+    findById: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: OrderController;
 export default _default;

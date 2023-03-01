@@ -39,8 +39,9 @@ class OrderService {
         return "Updated order"
     }
 
-    findById = async (id)=> {
-        let order = await this.orderRepository.findOneBy({id:id});
+    findById = async (idUser)=> {
+        let sql = `select * from shop.order o where o.idUser = ${idUser} and  o.status != 'buying'`
+        let order = await this.orderRepository.query(sql);
         if(!order){
             return 'Can not find by id order';
         }
