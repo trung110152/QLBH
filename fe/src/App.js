@@ -42,7 +42,7 @@ function App() {
                       <Route path={'focus-product/:id'} element={<FocusProduct/>}/>
                       <Route path={'show-cart/:idOrder'} element={<ShowCart/>}/>
                       <Route path={'purchase-order/:idUser'} element={<PurchaseOrder/>}/>
-                      <Route path={'buy-now'} element={<BuyNow/>}/>
+                      <Route path={'buy-now/:id'} element={<BuyNow/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }
