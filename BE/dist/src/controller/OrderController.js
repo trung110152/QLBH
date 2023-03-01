@@ -63,6 +63,16 @@ class OrderController {
                 res.status(500).json(e.message);
             }
         };
+        this.findById = async (req, res) => {
+            try {
+                let idUser = req.params.idUser;
+                let response = await this.orderService.findById(idUser);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
         this.orderService = OrderService_1.default;
     }
 }
