@@ -79,7 +79,11 @@ export default function ShowCart() {
                                                     <td className="total-amount" data-title="Total">
                                                         <span>{item.total} $</span></td>
                                                     <td className="action" data-title="Remove"><a style={{textDecoration:"none"}} href="#"><i
-                                                        className="ti-trash remove-icon"></i></a></td>
+                                                        className="ti-trash remove-icon" onClick={()=>{
+                                                            dispatch(deleteCart(item.id)).then(()=>{
+                                                                dispatch(showCart(idOrder))
+                                                            })
+                                                    }}></i></a></td>
                                                 </tr>
                                         ))}
                                         </tbody>

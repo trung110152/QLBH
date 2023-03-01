@@ -22,7 +22,7 @@ class OrderService {
             return order;
         };
         this.showCart = async (id) => {
-            let sql = `select p.name,p.price, p.description, p.image, po.quantity, po.total from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`;
+            let sql = `select po.id, p.name,p.price, p.description, p.image, po.quantity, po.total from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`;
             let cart = this.orderRepository.query(sql);
             if (!cart) {
                 return 'Can not find cart';
