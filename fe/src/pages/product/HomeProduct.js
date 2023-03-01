@@ -101,7 +101,6 @@ export default function HomeProduct(){
                     </div>
                 </div>
             </section>
-
             <div className="product-area section">
                 <div className="container">
                     <div className="row">
@@ -150,7 +149,7 @@ export default function HomeProduct(){
                                                                     <div className="product-action-2">
                                                                         <a  style={{textDecoration: 'none'}}  href={`/home/focus-product/${product.id}`}>Add to cart</a>
                                                                         <span> or </span>
-                                                                        <Link  style={{textDecoration: 'none'}}  to="#" style={{color: "red"}}>Buy now</Link>
+                                                                        <Link  style={{textDecoration: 'none'}}  to="/home/buy-now" style={{color: "red"}}>Buy now</Link>
                                                                     </div>
                                                                 </div>
                                                             </div>

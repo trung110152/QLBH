@@ -19,6 +19,7 @@ export default function ShowCart() {
         return state.orders.cart
     })
 
+
     useEffect(() => {
         dispatch(showCart(idOrder))
     }, [])
@@ -29,7 +30,7 @@ export default function ShowCart() {
     return (
         <>
             {
-                carts.length === 0 ? <><p>No product</p></> : <>
+                carts.length === 0 || carts === 'Saved cart'? <><p>No product</p></> : <>
                     <div className="breadcrumbs">
                         <div className="container">
                             <div className="row">
@@ -91,12 +92,11 @@ export default function ShowCart() {
                                         <div className="row">
                                             <div  className="col-lg-4 col-md-7 col-12">
                                                 <div className="mt-3 right">
-                                                    {carts.map((item) => (
-                                                        <>
+                                                    <>
                                                             <ul>
-                                                                <li>Cart Subtotal<span>{item.total}$</span></li>
+                                                                <li>Cart Subtotal<span>{totalPoint} $</span></li>
                                                                 <li>Shipping<span>Free</span></li>
-                                                                <li className="last">You Pay<span>{item.total}$</span>
+                                                                <li className="last">You Pay<span>{totalPoint} $</span>
                                                                 </li>
                                                             </ul>
                                                             <div>
@@ -108,7 +108,6 @@ export default function ShowCart() {
                                                                 </a>
                                                             </div>
                                                         </>
-                                                    ))}
                                                 </div>
                                             </div>
                                                  <div  className="col-lg-4 col-md-7 col-12">
