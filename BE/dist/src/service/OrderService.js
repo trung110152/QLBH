@@ -34,7 +34,7 @@ class OrderService {
             if (!order) {
                 return 'Can not save order';
             }
-            return 'Saved order';
+            return order;
         };
         this.updateOrder = async (id, newOrder) => {
             let order = await this.orderRepository.findOneBy({ id: id });

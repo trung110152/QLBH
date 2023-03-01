@@ -46,7 +46,7 @@ class OrderService {
         if(!order){
             return 'Can not save order'
         }
-        return  'Saved order'
+        return  order
     }
 
     updateOrder = async (id, newOrder)=>{
