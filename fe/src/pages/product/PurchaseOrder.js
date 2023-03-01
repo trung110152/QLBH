@@ -23,14 +23,14 @@ export default function PurchaseOrder() {
     const [i , setI] = useState(-1)
     return (
         <>
-
+            <h1>Purchase Order</h1>
             {orders.length === 0 && <><p>No order </p></>}
             {orders !== 'Can not find by id order' && orders.map((order, index) => (
                 <>
-                    <h1>Purchase Order</h1>
-                    <p>{order.id}</p>
-                    <p>{order.totalPoint}</p>
-                    <p>{order.status}</p>
+
+                  <p> Order ID: {order.id}</p>
+                    <p>Total Price: {order.totalPoint}</p>
+                    <p>Status: {order.status}</p>
 
                     <button onClick={() => {
                         dispatch(showCart(order.id))
@@ -40,7 +40,7 @@ export default function PurchaseOrder() {
                     {index === i && carts !== 'Saved cart' && carts.map(item => (
                         <tr>
                             <td><img src={item.image} alt="" style={{width: 50}}/></td>
-                            <td>{item.description}</td>
+                            <td>{item.name}</td>
                             <td>{item.price}</td>
                             <td>{item.quantity}</td>
                             <td>{item.total}</td>
