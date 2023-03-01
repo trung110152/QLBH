@@ -132,13 +132,13 @@ export default function HomeProduct(){
                                                     <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                         <div className="single-product">
                                                             <div className="product-img">
-                                                                <Link  style={{textDecoration: 'none'}} to={`/home/focus-product/${product.id}`}>
+                                                                <a  style={{textDecoration: 'none'}} href={`/home/focus-product/${product.id}`}>
                                                                     <img className="default-img"
                                                                          src={product.image} alt="#" style={{width:320, height:450}}/>
                                                                     <span className="out-of-stock">Hot</span>
 
 
-                                                                </Link>
+                                                                </a>
                                                                 <div className="button-head">
                                                                     <div className="product-action">
                                                                        <Link  style={{textDecoration: 'none'}} ><i className=" ti-eye"></i><span>Detail 142</span></Link>
@@ -148,7 +148,7 @@ export default function HomeProduct(){
                                                                             className="ti-bar-chart-alt"></i><span>Add to Compare</span></Link>
                                                                     </div>
                                                                     <div className="product-action-2">
-                                                                        <Link  style={{textDecoration: 'none'}}  to="/home/addCart">Add to cart</Link>
+                                                                        <a  style={{textDecoration: 'none'}}  href={`/home/focus-product/${product.id}`}>Add to cart</a>
                                                                         <span> or </span>
                                                                         <Link  style={{textDecoration: 'none'}}  to="#" style={{color: "red"}}>Buy now</Link>
                                                                     </div>
