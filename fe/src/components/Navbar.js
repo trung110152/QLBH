@@ -129,9 +129,10 @@ export default function Navbar(){
                                                             <li className="active"><Link  style={{textDecoration: 'none'}} to="/home" >Home</Link></li>
                                                             {user.role === 'admin' &&
                                                                 <>
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product <i className="ti-angle-down"></i></Link>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="#">Manager <i className="ti-angle-down"></i></Link>
                                                                         <ul className="dropdown">
-                                                                            <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Manager Home</Link></li>
+                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product</Link></li>
+                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-order">Manager Order</Link></li>
                                                                         </ul>
                                                                     </li>
                                                                     <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product <i className="ti-angle-down"></i></Link>
