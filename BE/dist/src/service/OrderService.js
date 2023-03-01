@@ -5,6 +5,14 @@ const data_source_1 = require("../data-source");
 const product_order_1 = require("../model/product-order");
 class OrderService {
     constructor() {
+        this.showCart = async (id) => {
+            let sql = `select p.price, p.description, p.image, po.quantity, po.total from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`;
+            let cart = this.orderRepository.query(sql);
+            if (!cart) {
+                return 'Can not find cart';
+            }
+            return cart;
+        };
         this.save = async (value) => {
             let order = this.orderRepository.save(value);
             if (!order) {

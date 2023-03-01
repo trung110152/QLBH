@@ -5,6 +5,7 @@ import {register} from "../services/userService";
 import {useState} from "react";
 import swal from 'sweetalert';
 import * as Yup from "yup";
+import {addOrder} from "../services/orderService";
 
 
 export default function Register() {
@@ -33,7 +34,18 @@ export default function Register() {
                 swal("Register Success!", {
                     icon: "success",
                 });
-                navigate('/')
+                let order = {
+                    idUser: e.payload.id,
+                    receiver: e.payload.username,
+                    address: 'hd',
+                    phone: 0,
+                    time: '2023-02-24 00:29:52',
+                    totalPoint: 0,
+                    status: 'buying'
+                }
+                dispatch(addOrder(order))
+
+                // navigate('/')
             }else {
                 setCheck(1)
             }

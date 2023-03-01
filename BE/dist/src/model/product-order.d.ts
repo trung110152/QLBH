@@ -4,5 +4,4 @@ export declare class ProductOrder {
     total: number;
     idProduct: number;
     idOrder: number;
-    idUser: number;
 }

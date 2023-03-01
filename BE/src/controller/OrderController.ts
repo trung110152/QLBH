@@ -12,6 +12,16 @@ class OrderController {
 
     }
 
+    showCart = async (req: Request, res: Response)=>{
+        try {
+            let response = await this.orderService.showCart(req.params.idOrder);
+            res.status(200).json(response)
+        } catch (e){
+            res.status(500).json(e.message)
+        }
+
+    }
+
     checkTotalPoint = async (req: Request, res: Response)=>{
         try {
             let response = await this.orderService.checkTotalPoint(req.params.idOrder);

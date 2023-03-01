@@ -42,7 +42,7 @@ __decorate([
     __metadata("design:type", Number)
 ], Order.prototype, "totalPoint", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'buying' }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Order.prototype, "status", void 0);
 Order = __decorate([
