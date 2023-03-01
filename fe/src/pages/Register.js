@@ -45,7 +45,7 @@ export default function Register() {
                 }
                 dispatch(addOrder(order))
 
-                // navigate('/')
+                navigate('/')
             }else {
                 setCheck(1)
             }
