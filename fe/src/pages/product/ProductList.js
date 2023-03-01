@@ -193,7 +193,7 @@ export default function ProductList() {
                                                             <Link  style={{textDecoration: 'none'}} to={`/home/focus-product/${product.id}`}>
                                                                 <img className="default-img"
                                                                      src={product.image} alt="#" style={{width:320, height:450}}/>
-
+                                                                <span className="out-of-stock">{product.price} $</span>
 
                                                             </Link>
                                                             <div className="button-head">
@@ -212,9 +212,9 @@ export default function ProductList() {
                                                             </div>
                                                         </div>
                                                         <div className="product-content">
-                                                            <h5>{product.description}</h5>
+                                                            <h6 style={{textAlign:"center"}}>{product.name}</h6>
                                                             <div className="product-price">
-                                                                <span style={{color:"red"}}>{product.price} $</span>
+                                                                <span style={{color:"red"}}></span>
                                                             </div>
 
                                                         </div>
