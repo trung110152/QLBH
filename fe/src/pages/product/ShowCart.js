@@ -28,6 +28,8 @@ let totalPoint = 0;
 
     return(
         <>
+        {
+            carts.length === 0? <><p>No product</p></>:<>
             <table>
                 <tr>
                     <td></td>
@@ -39,45 +41,45 @@ let totalPoint = 0;
                 </tr>
                 {carts !== 'Saved cart' && carts.map(item=>(
                     totalPoint += item.total,
-                    <tr>
-                        <td><img src={item.image} alt="" style={{width:50}}/></td>
-                        <td>{item.description}</td>
-                        <td>{item.price}</td>
-                        <td>{item.quantity}</td>
-                        <td>{item.total}</td>
-                        <td>{item.description}</td>
-                        <td>Delete</td>
-                    </tr>
+                        <tr>
+                            <td><img src={item.image} alt="" style={{width:50}}/></td>
+                            <td>{item.description}</td>
+                            <td>{item.price}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.total}</td>
+                            <td>{item.description}</td>
+                            <td>Delete</td>
+                        </tr>
                 ))}
             </table>
             <p style={{marginLeft:800, color: "red"}}>Total point: {totalPoint} $</p>
             <hr/>
             <Formik
-            initialValues={{
-                id:idOrder,
-                receiver:'',
-                address:'',
-                phone:'',
-                time:'',
-                totalPoint: totalPoint
-            }}
-            onSubmit={(values)=>{
-                values.status = 'loading';
-                values.totalPoint = totalPoint;
-                dispatch(editOrder(values)).then(()=>{
-                    let order = {
-                        idUser: user.idUser,
-                        receiver: user.username,
-                        address: 'hd',
-                        phone: 0,
-                        time: '2023-02-24 00:29:52',
-                        totalPoint: 0,
-                        status: 'buying'
-                    }
-                    dispatch(addOrder(order))
-                    navigate('/home')
-                })
-            }}
+                initialValues={{
+                    id:idOrder,
+                    receiver:'',
+                    address:'',
+                    phone:'',
+                    time:'',
+                    totalPoint: totalPoint
+                }}
+                onSubmit={(values)=>{
+                    values.status = 'loading';
+                    values.totalPoint = totalPoint;
+                    dispatch(editOrder(values)).then(()=>{
+                        let order = {
+                            idUser: user.idUser,
+                            receiver: user.username,
+                            address: 'hd',
+                            phone: 0,
+                            time: '2023-02-24 00:29:52',
+                            totalPoint: 0,
+                            status: 'buying'
+                        }
+                        dispatch(addOrder(order))
+                        navigate('/home')
+                    })
+                }}
             >
 
                 <Form>
@@ -90,6 +92,7 @@ let totalPoint = 0;
             </Formik>
             <br/>
 
-        </>
+        </>}
+</>
     )
 }

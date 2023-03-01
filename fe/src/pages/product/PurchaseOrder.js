@@ -10,6 +10,7 @@ export default function PurchaseOrder() {
     const orders = useSelector(state => {
         return state.orders.orders
     })
+
     const carts = useSelector(state => {
         return state.orders.cart
     })
@@ -22,10 +23,11 @@ export default function PurchaseOrder() {
     const [i , setI] = useState(-1)
     return (
         <>
-            <h1>Purchase Order</h1>
+
+            {orders.length === 0 && <><p>No order </p></>}
             {orders !== 'Can not find by id order' && orders.map((order, index) => (
                 <>
-
+                    <h1>Purchase Order</h1>
                     <p>{order.id}</p>
                     <p>{order.totalPoint}</p>
                     <p>{order.status}</p>
@@ -43,7 +45,6 @@ export default function PurchaseOrder() {
                             <td>{item.quantity}</td>
                             <td>{item.total}</td>
                             <td>{item.description}</td>
-                            <td>Delete</td>
                         </tr>
                     ))}
                 </>
