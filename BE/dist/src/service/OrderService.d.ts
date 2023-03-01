@@ -2,6 +2,7 @@ declare class OrderService {
     private orderRepository;
     private productOrderRepository;
     constructor();
+    deleteCart: (id: any) => Promise<any>;
     getOrder: (idUser: any) => Promise<any>;
     showCart: (id: any) => Promise<any>;
     save: (value: any) => Promise<"Can not save order" | "Saved order">;

@@ -11,6 +11,15 @@ class OrderController {
         this.orderService = orderService;
 
     }
+    deleteCart = async (req: Request, res: Response)=>{
+        try{
+            let response = await this.orderService.deleteCart(req.params.id);
+            res.status(200).json(response)
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+
+    }
 
     getOrder = async (req: Request, res: Response)=>{
         try{

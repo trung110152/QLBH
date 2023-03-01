@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 declare class OrderController {
     private orderService;
     constructor();
+    deleteCart: (req: Request, res: Response) => Promise<void>;
     getOrder: (req: Request, res: Response) => Promise<void>;
     showCart: (req: Request, res: Response) => Promise<void>;
     checkTotalPoint: (req: Request, res: Response) => Promise<void>;

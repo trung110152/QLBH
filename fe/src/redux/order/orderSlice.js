@@ -1,6 +1,6 @@
 import {
     addCart,
-    addOrder,
+    addOrder, deleteCart,
     editOrder,
     findByIdUser,
     findByStatus,
@@ -49,7 +49,6 @@ const orderSlice = createSlice({
                 state.cart = action.payload
 
             });
-
 
         }
 }

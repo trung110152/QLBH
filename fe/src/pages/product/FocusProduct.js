@@ -114,7 +114,7 @@ export default function FocusProduct() {
                                         <li><p>Total Quantity: {product.totalQuantity}.</p></li>
                                         <li><p>Brand:  {product.nameCategory}</p></li>
                                         <li><p>Price: {product.price}</p></li>
-                                        <li>  <p>Quantity: <span> <input type="number" name={'quantity'} placeholder={0} onClick={(e) => {
+                                        <li>  <p>Quantity: <span> <input type="number" name={'quantity'} min="1" placeholder={1}  onClick={(e) => {
                                             let quantity = e.target.value;
                                             let totall = quantity * product.price;
                                             setTotal(totall);
@@ -129,7 +129,7 @@ export default function FocusProduct() {
                                         }}/></span></p>
                                             {total ?
                                                 <p style={{color: "red"}}>{total}<span>$</span></p> :
-                                                <p style={{color: "red"}}>0<span>$</span></p>
+                                                <p style={{color: "red"}}>{product.price}<span>$</span></p>
                                             }</li>
                                         <li>
                                             <div>

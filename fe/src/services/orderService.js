@@ -56,3 +56,11 @@ export const showCart = createAsyncThunk(
         return res.data;
     }
 )
+
+export const deleteCart = createAsyncThunk(
+    'order/deleteCart',
+    async (data)=>{
+        const res = await customAxios.delete(`orders/delete-cart/${data}`);
+        return res.data;
+    }
+)
