@@ -53,7 +53,7 @@ export default function ManagerProduct(){
                                         }} >All</button></li>
 
                                         {categories.map((category)=>(
-                                            <li  className="nav-item"><button style={{height:30,fontSize:10}} className=" ml-3  btn btn-outline-secondary my-2 my-sm-0" onClick={()=>{
+                                            <li  className="nav-item"><button style={{height:30,fontSize:10,width:80}} className=" ml-3  btn btn-outline-secondary my-2 my-sm-0" onClick={()=>{
                                                 dispatch(findByName(category.name))
                                             }} >{category.name}</button></li>
                                         ))}
