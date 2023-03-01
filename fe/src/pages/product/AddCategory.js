@@ -9,7 +9,6 @@ import {deleteProduct} from "../../services/productsService";
 
 
 
-
 export default function AddCategory() {
 
     const dispatch = useDispatch();
