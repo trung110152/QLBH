@@ -21,7 +21,7 @@ export default function Navbar(){
         <>
                 <header className="header shop">
                     <div className="topbar">
-                        <div className="container">
+                        <div className="container" >
                             <div className="row">
                                 <div className="col-lg-4 col-md-12 col-12">
 
