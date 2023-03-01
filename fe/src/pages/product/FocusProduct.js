@@ -1,7 +1,7 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {findByIdProduct} from "../../services/productsService";
+import {findByIdProduct, getProducts} from "../../services/productsService";
 import {addCart, findByStatus} from "../../services/orderService";
 import swal from "sweetalert";
 import Login from "../Login";
@@ -36,36 +36,22 @@ export default function FocusProduct() {
         }
     }
 
+    const products = useSelector(state => {
+        return state.products.products
+    })
+
+    useEffect(()=>{
+        dispatch(getProducts()).then(()=>{
+        })
+    },[]);
+
+    const nimitProduct = products.slice(0,3)
 
     return (
-        <><br/>
-            <img src={product.image} alt="" style={{width: 50}}/>
-            <p>{product.name}</p>
-            <p>{product.description}</p>
-            <p>{product.totalQuantity}</p>
-            <p>{product.nameCategory}</p>
-            <p>Price: {product.price}</p>
-            <p>Quantity: <span> <input type="number" name={'quantity'} placeholder={0} onClick={(e) => {
-                let quantity = e.target.value;
-                let totall = quantity * product.price;
-                setTotal(totall);
-                dispatch(findByStatus(user.idUser)).then((data) => {
-                    setCart({
-                        ...cart,
-                        total: totall,
-                        quantity: quantity,
-                        idOrder: data.payload.id
-                    })
-                })
-            }}/></span></p>
-            {total ?
-                <p style={{color: "red"}}>{total}<span>$</span></p> :
-                <p style={{color: "red"}}>0<span>$</span></p>
-            }
-            <button className="btn btn-outline-secondary" onClick={() => {
-                handleAddCart()
-            }}>Add to cart
-            </button>
+        <>
+
+
+
 
 
             <div className="breadcrumbs">
@@ -91,23 +77,12 @@ export default function FocusProduct() {
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="image">
-                                            <img src="https://via.placeholder.com/950x460" alt="#"/>
+                                            <img src={product.image} alt="" style={{width: 700}}/>
                                         </div>
                                         <div className="blog-detail">
-                                            <h2 className="blog-title">What are the secrets to start- up success?</h2>
-                                            <div className="blog-meta">
-                                                <span className="author"><a href="#"><i className="fa fa-user"></i>By Admin</a><a
-                                                    href="#"><i className="fa fa-calendar"></i>Dec 24, 2018</a><a
-                                                    href="#"><i className="fa fa-comments"></i>Comment (15)</a></span>
-                                            </div>
+                                            <h2 className="blog-title">{product.name}</h2>
                                             <div className="content">
-                                                <p>What a crazy time. I have five children in colleghigh school
-                                                    graduates.jpge or pursing post graduate studies Each of my children
-                                                    attends college far from home, the closest of which is more than 800
-                                                    miles away. While I miss being with my older children, I know that a
-                                                    college experience can be the source of great growth and experience
-                                                    can be the source of source of great growth and can provide them
-                                                    with even greater in future.</p>
+                                                <p>{product.description}</p>
 
 
                                             </div>
@@ -128,153 +103,64 @@ export default function FocusProduct() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-12">
-                                        <div className="comments">
-                                            <h3 className="comment-title">Comments (3)</h3>
-                                            <div className="single-comment">
-                                                <img src="https://via.placeholder.com/80x80" alt="#"/>
-                                                <div className="content">
-                                                    <h4>Alisa harm <span>At 8:59 pm On Feb 28, 2018</span></h4>
-                                                    <p>Enthusiastically leverage existing premium quality vectors
-                                                        with enterprise-wide innovation collaboration
-                                                        Phosfluorescently leverage others enterprisee
-                                                        Phosfluorescently leverage.</p>
-                                                    <div className="button">
-                                                        <a href="#" className="btn"><i className="fa fa-reply"
-                                                                                       aria-hidden="true"></i>Reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="single-comment left">
-                                                <img src="https://via.placeholder.com/80x80" alt="#"/>
-                                                <div className="content">
-                                                    <h4>john deo <span>Feb 28, 2018 at 8:59 pm</span></h4>
-                                                    <p>Enthusiastically leverage existing premium quality vectors
-                                                        with enterprise-wide innovation collaboration
-                                                        Phosfluorescently leverage others enterprisee
-                                                        Phosfluorescently leverage.</p>
-                                                    <div className="button">
-                                                        <a href="#" className="btn"><i className="fa fa-reply"
-                                                                                       aria-hidden="true"></i>Reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="single-comment">
-                                                <img src="https://via.placeholder.com/80x80" alt="#"/>
-                                                <div className="content">
-                                                    <h4>megan mart <span>Feb 28, 2018 at 8:59 pm</span></h4>
-                                                    <p>Enthusiastically leverage existing premium quality vectors
-                                                        with enterprise-wide innovation collaboration
-                                                        Phosfluorescently leverage others enterprisee
-                                                        Phosfluorescently leverage.</p>
-                                                    <div className="button">
-                                                        <a href="#" className="btn"><i className="fa fa-reply"
-                                                                                       aria-hidden="true"></i>Reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="reply">
-                                            <div className="reply-head">
-                                                <h2 className="reply-title">Leave a Comment</h2>
-                                                <form className="form" action="#">
-                                                    <div className="row">
-                                                        <div className="col-lg-6 col-md-6 col-12">
-                                                            <div className="form-group">
-                                                                <label>Your Name<span>*</span></label>
-                                                                <input type="text" name="name" placeholder=""
-                                                                       required="required"/>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-lg-6 col-md-6 col-12">
-                                                            <div className="form-group">
-                                                                <label>Your Email<span>*</span></label>
-                                                                <input type="email" name="email" placeholder=""
-                                                                       required="required"/>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-12">
-                                                            <div className="form-group">
-                                                                <label>Your Message<span>*</span></label>
-                                                                <textarea name="message" placeholder=""></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-12">
-                                                            <div className="form-group button">
-                                                                <button type="submit" className="btn">Post comment
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-4 col-12">
                             <div className="main-sidebar">
-                                <div className="single-widget search">
-                                    <div className="form">
-                                        <input type="email" placeholder="Search Here..."/>
-                                        <a className="button" href="#"><i className="fa fa-search"></i></a>
-                                    </div>
-                                </div>
                                 <div className="single-widget category">
-                                    <h3 className="title">Blog Categories</h3>
+                                    <h3 className="title">{product.name}</h3>
                                     <ul className="categor-list">
-                                        <li><a href="#">Men's Apparel</a></li>
-                                        <li><a href="#">Women's Apparel</a></li>
-                                        <li><a href="#">Bags Collection</a></li>
-                                        <li><a href="#">Accessories</a></li>
-                                        <li><a href="#">Sun Glasses</a></li>
+                                        <li><p>Total Quantity: {product.totalQuantity}.</p></li>
+                                        <li><p>Brand:  {product.nameCategory}</p></li>
+                                        <li><p>Price: {product.price}</p></li>
+                                        <li>  <p>Quantity: <span> <input type="number" name={'quantity'} placeholder={0} onClick={(e) => {
+                                            let quantity = e.target.value;
+                                            let totall = quantity * product.price;
+                                            setTotal(totall);
+                                            dispatch(findByStatus(user.idUser)).then((data) => {
+                                                setCart({
+                                                    ...cart,
+                                                    total: totall,
+                                                    quantity: quantity,
+                                                    idOrder: data.payload.id
+                                                })
+                                            })
+                                        }}/></span></p>
+                                            {total ?
+                                                <p style={{color: "red"}}>{total}<span>$</span></p> :
+                                                <p style={{color: "red"}}>0<span>$</span></p>
+                                            }</li>
+                                        <li>
+                                            <div>
+                                                 <button style={{width:130}} className="btn btn-outline-secondary" onClick={() => {
+                                            handleAddCart()
+                                        }}>Add to cart
+                                                 </button>
+                                                <button style={{width:130}} className="ml-3 btn btn-outline-danger" onClick={() => {
+                                                    handleAddCart()
+                                                }}>Buy
+                                                </button>
+                                            </div>
+                                         </li>
                                     </ul>
                                 </div>
                                 <div className="single-widget recent-post">
-                                    <h3 className="title">Recent post</h3>
-                                    <div className="single-post">
-                                        <div className="image">
-                                            <img src="https://via.placeholder.com/100x100" alt="#"/>
-                                        </div>
-                                        <div className="content">
-                                            <h5><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-                                            <ul className="comment">
-                                                <li><i className="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020
-                                                </li>
-                                                <li><i className="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="single-post">
-                                        <div className="image">
-                                            <img src="https://via.placeholder.com/100x100" alt="#"/>
-                                        </div>
-                                        <div className="content">
-                                            <h5><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-                                            <ul className="comment">
-                                                <li><i className="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019
-                                                </li>
-                                                <li><i className="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <h3 className="title">Same Products</h3>
+                                    {nimitProduct.map((products) => (
+                                        <div className="single-post">
+                                            <div className="image">
+                                                <a style={{textDecoration:"none"}} href={`/home/focus-product/${products.id}`}> <img src={products.image} alt="" style={{width: 100}}/>  </a>
+                                            </div>
+                                            <div className="content">
+                                                <a style={{textDecoration:"none"}} href={`/home/focus-product/${products.id}`}><h9 >{products.name}</h9>
 
-                                    <div className="single-post">
-                                        <div className="image">
-                                            <img src="https://via.placeholder.com/100x100" alt="#"/>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div className="content">
-                                            <h5><a href="#">Top 10 Beautyful Women Dress in the world</a></h5>
-                                            <ul className="comment">
-                                                <li><i className="fa fa-calendar" aria-hidden="true"></i>June 09, 2019
-                                                </li>
-                                                <li><i className="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                        ))}
+
+
                                 </div>
 
                                 <div className="single-widget side-tags">
