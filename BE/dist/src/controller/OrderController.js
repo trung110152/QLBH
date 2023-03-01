@@ -6,6 +6,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const OrderService_1 = __importDefault(require("../service/OrderService"));
 class OrderController {
     constructor() {
+        this.deleteCart = async (req, res) => {
+            try {
+                let response = await this.orderService.deleteCart(req.params.id);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
         this.getOrder = async (req, res) => {
             try {
                 let response = await this.orderService.getOrder();

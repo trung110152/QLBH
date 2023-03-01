@@ -1,7 +1,7 @@
 import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {addOrder, editOrder, findByStatus, showCart} from "../../services/orderService";
+import {addOrder, deleteCart, editOrder, findByStatus, showCart} from "../../services/orderService";
 import {useNavigate, useParams} from "react-router-dom";
 
 export default function ShowCart(){
@@ -48,7 +48,11 @@ let totalPoint = 0;
                             <td>{item.quantity}</td>
                             <td>{item.total}</td>
                             <td>{item.description}</td>
-                            <td>Delete</td>
+                            <td><button onClick={()=>{
+                                dispatch(deleteCart(item.id)).then(()=>{
+                                    dispatch(showCart(idOrder))
+                                })
+                            }}>Delete</button></td>
                         </tr>
                 ))}
             </table>

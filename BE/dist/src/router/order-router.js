@@ -15,4 +15,5 @@ exports.orderRouter.put('/editOrder/:id', OrderController_1.default.editOrder);
 exports.orderRouter.get('/find-by-status/:idUser', OrderController_1.default.findByStatus);
 exports.orderRouter.get('/find-by-idUser/:idUser', OrderController_1.default.findById);
 exports.orderRouter.get('/show-cart/:idOrder', OrderController_1.default.showCart);
+exports.orderRouter.delete('/delete-cart/:id', OrderController_1.default.deleteCart);
 //# sourceMappingURL=order-router.js.map

@@ -5,6 +5,14 @@ const data_source_1 = require("../data-source");
 const product_order_1 = require("../model/product-order");
 class OrderService {
     constructor() {
+        this.deleteCart = async (id) => {
+            let cart = await this.productOrderRepository.findOneBy({ id: id });
+            if (!cart) {
+                return 'Can not remove product';
+            }
+            this.productOrderRepository.delete({ id: id });
+            return cart;
+        };
         this.getOrder = async (idUser) => {
             let sql = `select * from shop.order o where o.status != 'buying'`;
             let order = await this.orderRepository.query(sql);
@@ -14,7 +22,7 @@ class OrderService {
             return order;
         };
         this.showCart = async (id) => {
-            let sql = `select p.price, p.description, p.image, po.quantity, po.total from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`;
+            let sql = `select p.price, p.description, p.image, po.quantity, po.total, po.id from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`;
             let cart = this.orderRepository.query(sql);
             if (!cart) {
                 return 'Can not find cart';

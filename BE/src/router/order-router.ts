@@ -10,5 +10,6 @@ orderRouter.put('/editOrder/:id', orderController.editOrder);
 orderRouter.get('/find-by-status/:idUser', orderController.findByStatus);
 orderRouter.get('/find-by-idUser/:idUser', orderController.findById);
 orderRouter.get('/show-cart/:idOrder', orderController.showCart);
+orderRouter.delete('/delete-cart/:id', orderController.deleteCart);
 
 
