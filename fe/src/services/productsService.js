@@ -15,7 +15,7 @@ export const findByIdProduct = createAsyncThunk(
     'products/findByIdProduct',
     async (data)=>{
         const res = await customAxios.get('products/findById/'+data);
-        return res.data;
+        return res.data[0];
     }
 )
 

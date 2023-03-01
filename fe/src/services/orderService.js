@@ -23,6 +23,15 @@ export const findByStatus = createAsyncThunk(
         return res.data[0];
     }
 )
+
+export const findByIdUser = createAsyncThunk(
+    'order/findById',
+    async (data)=>{
+        const res = await customAxios.get(`orders/find-by-idUser/${data}`);
+        return res.data;
+    }
+)
+
 export const addCart = createAsyncThunk(
     'order/addCart',
     async (data)=>{

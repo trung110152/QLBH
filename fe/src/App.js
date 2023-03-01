@@ -6,13 +6,15 @@ import Register from "./pages/Register";
 import Home from "./pages/home/Home";
 import HomeProduct from "./pages/product/HomeProduct";
 import AddProduct from "./pages/product/AddProduct";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import EditProduct from "./pages/product/EditProduct";
 import ProductList from "./pages/product/ProductList";
 import ManagerProduct from "./pages/product/ManagerProduct";
 import ShowCart from "./pages/product/ShowCart";
 import FocusProduct from "./pages/product/FocusProduct";
 import AddCategory from "./pages/product/AddCategory";
+import PurchaseOrder from "./pages/product/PurchaseOrder";
+import ManagerOrder from "./pages/product/ManagerOrder";
 
 function App() {
   // service -> slice -> store -> selector -> useEffect
@@ -31,12 +33,14 @@ function App() {
                   <Route path={'home'} element={<Home/>}>
                       <Route path={''} element={<HomeProduct/>}/>
                       <Route path={'manager-product'} element={<ManagerProduct/>}/>
+                      <Route path={'manager-order'} element={<ManagerOrder/>}/>
                       <Route path={'add-product'} element={<AddProduct/>}/>
                       <Route path={'add-category'} element={<AddCategory/>}/>
                       <Route path={'my-product'} element={<ProductList/>}/>
                       <Route path={'edit-product/:id'} element={<EditProduct/>}/>
                       <Route path={'focus-product/:id'} element={<FocusProduct/>}/>
                       <Route path={'show-cart/:idOrder'} element={<ShowCart/>}/>
+                      <Route path={'purchase-order/:idUser'} element={<PurchaseOrder/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }

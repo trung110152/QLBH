@@ -13,6 +13,15 @@ class OrderService {
         this.productOrderRepository = AppDataSource.getRepository(ProductOrder)
     }
 
+    getOrder = async (idUser)=> {
+        let sql = `select * from shop.order o where o.status != 'buying'`
+        let order = await this.orderRepository.query(sql);
+        if(!order){
+            return 'Can not find by id order';
+        }
+        return order;
+    }
+
     showCart = async (id) => {
         let sql = `select p.price, p.description, p.image, po.quantity, po.total from product_order po  join product p  on po.idProduct = p.id where po.idOrder = ${id}`
         let cart = this.orderRepository.query(sql)
@@ -39,8 +48,9 @@ class OrderService {
         return "Updated order"
     }
 
-    findById = async (id)=> {
-        let order = await this.orderRepository.findOneBy({id:id});
+    findById = async (idUser)=> {
+        let sql = `select * from shop.order o where o.idUser = ${idUser} and  o.status != 'buying'`
+        let order = await this.orderRepository.query(sql);
         if(!order){
             return 'Can not find by id order';
         }

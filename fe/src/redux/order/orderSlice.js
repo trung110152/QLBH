@@ -1,11 +1,12 @@
-import {addCart, addOrder, editOrder, findByStatus, showCart} from "../../services/orderService";
+import {addCart, addOrder, editOrder, findByIdUser, findByStatus, showCart} from "../../services/orderService";
 import {createSlice} from "@reduxjs/toolkit";
 
 
 
 const initialState = {
     order:[],
-    cart:[]
+    cart:[],
+    orders:[]
 }
 const orderSlice = createSlice({
         name:'order',
@@ -23,6 +24,11 @@ const orderSlice = createSlice({
                 state.order = action.payload
 
             });
+            builder.addCase(findByIdUser.fulfilled, (state, action) => {
+                state.orders = action.payload
+
+            });
+
             builder.addCase(addCart.fulfilled, (state, action) => {
                 state.cart = action.payload
 

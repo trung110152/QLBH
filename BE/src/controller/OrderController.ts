@@ -12,6 +12,16 @@ class OrderController {
 
     }
 
+    getOrder = async (req: Request, res: Response)=>{
+        try{
+            let response = await this.orderService.getOrder();
+            res.status(200).json(response)
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+
+    }
+
     showCart = async (req: Request, res: Response)=>{
         try {
             let response = await this.orderService.showCart(req.params.idOrder);
@@ -67,6 +77,17 @@ class OrderController {
         try{
             let idUser = req.params.idUser
             let response = await this.orderService.findByStatusOrder(idUser);
+            res.status(200).json(response)
+        } catch (e) {
+            res.status(500).json(e.message)
+        }
+
+    }
+
+    findById = async (req: Request, res: Response)=>{
+        try{
+            let idUser = req.params.idUser
+            let response = await this.orderService.findById(idUser);
             res.status(200).json(response)
         } catch (e) {
             res.status(500).json(e.message)

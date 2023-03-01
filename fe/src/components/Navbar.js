@@ -76,7 +76,7 @@ export default function Navbar(){
                                             <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-heart-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar">
-                                            <Link  style={{textDecoration: 'none'}} to="#" className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
+                                            <Link  style={{textDecoration: 'none'}} to={`/home/purchase-order/${user.idUser}`} className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar shopping">
                                             <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${order.id}`} className="single-icon"><i className="ti-bag"></i> <span className="total-count">2</span></Link>
@@ -129,9 +129,10 @@ export default function Navbar(){
                                                             <li className="active"><Link  style={{textDecoration: 'none'}} to="/home" >Home</Link></li>
                                                             {user.role === 'admin' &&
                                                                 <>
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product <i className="ti-angle-down"></i></Link>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="#">Manager <i className="ti-angle-down"></i></Link>
                                                                         <ul className="dropdown">
-                                                                            <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Manager Home</Link></li>
+                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product</Link></li>
+                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-order">Manager Order</Link></li>
                                                                         </ul>
                                                                     </li>
                                                                     <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product <i className="ti-angle-down"></i></Link>

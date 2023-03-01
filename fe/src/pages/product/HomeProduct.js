@@ -137,6 +137,7 @@ export default function HomeProduct(){
                                                                          src={product.image} alt="#" style={{width:320, height:450}}/>
                                                                     <span className="out-of-stock">Hot</span>
 
+
                                                                 </Link>
                                                                 <div className="button-head">
                                                                     <div className="product-action">
@@ -153,8 +154,8 @@ export default function HomeProduct(){
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="product-content">
-                                                                <h5>{product.description}</h5>
+                                                            <div style={{textAlign:"center"}} className="product-content">
+                                                                <h5>{product.name}</h5>
                                                                 <div className="product-price">
                                                                     <span style={{color:"red"}}>{product.price} $</span>
                                                                 </div>
