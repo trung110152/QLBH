@@ -135,6 +135,17 @@ class HomeController {
 
     }
 
+    findByNameProduct = async (req: Request, res: Response) => {
+        try{
+            let search = req.query.search;
+            let response = await productService.findByNameProduct(search);
+            res.status(200).json(response)
+        }catch (e) {
+            res.status(500).json(e.message)
+        }
+
+    }
+
     getCategories = async (req: Request, res: Response) => {
         try{
             let response = await categoryService.getAll();

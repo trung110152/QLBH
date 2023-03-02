@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {findByName, getProducts} from "../../services/productsService";
+import {findByName, findByNameProduct, getProducts} from "../../services/productsService";
 import button from "bootstrap/js/src/button";
 import {getCategory} from "../../services/categoruService";
 import {Link} from "react-router-dom";
@@ -170,7 +170,9 @@ export default function ProductList() {
                                                 <label>Sort By </label>
                                                 <form className="form-inline my-2 my-lg-0">
                                                     <input  style={{marginLeft:550, border:10}} className="form-control mr-sm-2" type="search"
-                                                           placeholder="Search" aria-label="Search"/>
+                                                           placeholder="Search" aria-label="Search" onChange={(e)=>{
+                                                                dispatch(findByNameProduct(e.target.value))
+                                                    }}/>
                                                         <button className="  btn btn-outline-secondary my-2 my-sm-0 "
                                                                 type="submit">Search
                                                         </button>

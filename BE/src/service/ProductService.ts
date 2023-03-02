@@ -63,6 +63,14 @@ class ProductService {
         return product;
     }
 
+    findByNameProduct = async (search)=> {
+        let sql =`select p.id, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory from product_category pc join product p on pc.idProduct = p.id join category c on pc.idCategory = c.id where p.name like '%${search}%'`;
+        let product = await this.productRepository.query(sql);
+        if(!product){
+            return "Can not find by name";
+        }
+        return product;
+    }
 
     remove = async (id)=> {
         let product = await this.productRepository.findOneBy({id:id});

@@ -28,6 +28,15 @@ export const findByName = createAsyncThunk(
     }
 )
 
+export const findByNameProduct = createAsyncThunk(
+    'products/findByNameProduct',
+    async (data)=>{
+
+        const res = await customAxios.get(`products/search/findByNameProduct?search=${data}`);
+        return res.data;
+    }
+)
+
 
 export const addProduct = createAsyncThunk(
     'products/addProduct',

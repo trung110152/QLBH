@@ -11,5 +11,6 @@ productRouter.get('/findById/:id', homeController.findById);
 productRouter.get('/getCategories', homeController.getCategories);
 productRouter.post('/addCategories', homeController.addCategory);
 productRouter.get('/search/findByName', homeController.search);
+productRouter.get('/search/findByNameProduct', homeController.findByNameProduct);
 
 

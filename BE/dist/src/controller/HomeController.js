@@ -122,6 +122,16 @@ class HomeController {
                 res.status(500).json(e.message);
             }
         };
+        this.findByNameProduct = async (req, res) => {
+            try {
+                let search = req.query.search;
+                let response = await ProductService_1.default.findByNameProduct(search);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
         this.getCategories = async (req, res) => {
             try {
                 let response = await CategoryService_1.default.getAll();
