@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
-import {addOrder, editOrder, getOrder, showCart} from "../../services/orderService";
+import {editOrder, getOrder, showCart} from "../../services/orderService";
 import {useNavigate} from "react-router-dom";
 
 
