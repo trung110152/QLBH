@@ -26,14 +26,11 @@ export default function ShowCart() {
     }, [])
 
     let totalPoint = 0;
-
-
     return (
         <>
             {
                 carts.length === 0 || carts === 'Saved cart'? <>
                     <p style={{textAlignLast:"center", fontSize:100, height:300, marginTop:200}}>No product</p>
-
 
                 </> : <>
                     <div className="breadcrumbs">
