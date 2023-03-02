@@ -1,7 +1,7 @@
 import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {Link, useNavigate, useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {findByIdProduct} from "../../services/productsService";
 import {addCart, addOrder, deleteCart, editOrder, showCart} from "../../services/orderService";
 
@@ -48,8 +48,10 @@ export default function BuyNow() {
 
 return(
     <>
+        <div className="mt-3 section-title">
+            <h2>Product</h2>
+        </div>
 
-               <h1>Product</h1>
 
         <Formik
             initialValues={{
@@ -78,12 +80,12 @@ return(
 
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody style={{textAlign:"center"}}>
 
 
                                             <tr>
                                                 <td className="image" data-title="No"><img src={product.image} alt=""
-                                                                                           style={{width: 50}}/>
+                                                                                           style={{width: 100}}/>
                                                 </td>
                                                 <td className="product-des" data-title="name">
                                                     {product.name}
