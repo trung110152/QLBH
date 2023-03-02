@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {login} from "../services/userService";
 import {Field, Form, Formik} from "formik";
 import swal from "sweetalert";
+import './login.css'
 
 
 export default function Login() {
@@ -35,45 +36,57 @@ export default function Login() {
 
     return(
         <>
-            <div className="row">
-                <div className="offset-3 col-6 mt-5">
-                    <h1 style={{textAlign:'center' }}>Login</h1>
-                    <Formik
-                        initialValues={{username:'', password:''}}
-                        onSubmit={(values)=>{
-                            handleLogin(values).then()
-                        }}>
-                        <Form>
-                            <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Username</label>
-                                <Field type="text" className="form-control" id="exampleInput" name={'username'}/>
-                                {
-                                    user === 'Username is not existed' &&
-                                    <>
-                                    <h6 style={{color: "red"}}>Username is not existed</h6>
-                                    </>
-                                }
+
+                <div className="row" >
+                    <div className="col-5" style={{marginTop:110}}>
+                        <div className="row" >
+                            <div >
+                                <h1 style={{textAlign:'center', fontStyle:'Serif'}}>Login</h1>
+                                <img style={{width:100,marginLeft:220}} src="/images/logo3.png" alt=""/>
+                                <Formik
+                                    initialValues={{username:'', password:''}}
+                                    onSubmit={(values)=>{
+                                        handleLogin(values).then()
+                                    }}>
+                                    <Form>
+                                        <div className="mb-3" style={{marginLeft:50}}>
+                                            <label htmlFor="exampleInput" className="form-label">Username</label>
+                                            <Field  type="text" className="form-control" id="exampleInput" name={'username'}/>
+                                            {
+                                                user === 'Username is not existed' &&
+                                                <>
+                                                    <h6 style={{color: "red"}}>Username is not existed</h6>
+                                                </>
+                                            }
+                                        </div>
+
+                                        <div className="mb-3" style={{marginLeft:50}}>
+                                            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                            <Field type="password" className="form-control" id="exampleInputPassword1" name={'password'}/>
+                                            {
+                                                user === 'Password is wrong' &&
+                                                <>
+                                                    <h6 style={{color: "red"}}>Password is wrong</h6>
+                                                </>
+                                            }
+                                        </div>
+
+                                        <button type="submit" className="btn btn-primary" style={{marginLeft:180}} >Login</button>
+                                        <Link to={'/register'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary">register</button></Link>
+                                    </Form>
+                                </Formik>
+
+
                             </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                <Field type="password" className="form-control" id="exampleInputPassword1" name={'password'}/>
-                                {
-                                    user === 'Password is wrong' &&
-                                    <>
-                                        <h6 style={{color: "red"}}>Password is wrong</h6>
-                                    </>
-                                }
-                            </div>
-
-                            <button type="submit" className="btn btn-primary" style={{marginRight: 10}}>Login</button>
-                            <Link to={'/register'} ><button type="submit" className="btn btn-secondary">register</button></Link>
-                        </Form>
-                    </Formik>
-
-
+                        </div>
+                    </div>
+                    <div className="col-7">
+                        <img style={{height:650}} src="/images/1234.jpg" alt=""/>
+                    </div>
                 </div>
-            </div>
+
+
+
         </>
     )
 }
