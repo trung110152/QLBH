@@ -24,7 +24,7 @@ class OrderService {
     }
 
     getOrder = async (idUser)=> {
-        let sql = `select * from shop.order o where o.status != 'buying'`
+        let sql = `select o.id, o.time,o.totalPoint,o.status,o.receiver, o.address,o.phone, u.username from shop.order o join user u on o.idUser = u.id where  o.status != 'buying'`
         let order = await this.orderRepository.query(sql);
         if(!order){
             return 'Can not find by id order';

@@ -79,10 +79,14 @@ export default function Login() {
                                                 }
                                             </div>
                                         </div>
+                                        <div className="row">
+                                                <div style={{textAlign:"center"}}>
+                                                    <button type="submit" className="btn btn-primary"  >Login</button>
+                                                    <Link to={'/register'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary">register</button></Link>
 
+                                                </div>
+                                         </div>
 
-                                        <button type="submit" className="btn btn-primary" style={{marginLeft:180}} >Login</button>
-                                        <Link to={'/register'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary">register</button></Link>
                                     </Form>
                                 </Formik>
 

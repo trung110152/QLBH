@@ -1,7 +1,7 @@
 import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {addOrder, countCart, deleteCart, editOrder, findByStatus, showCart} from "../../services/orderService";
+import {addOrder, deleteCart, editOrder,showCart} from "../../services/orderService";
 import {Link, useNavigate, useParams} from "react-router-dom";
 
 export default function ShowCart() {
@@ -26,14 +26,11 @@ export default function ShowCart() {
     }, [])
 
     let totalPoint = 0;
-
-
     return (
         <>
             {
                 carts.length === 0 || carts === 'Saved cart'? <>
                     <p style={{textAlignLast:"center", fontSize:100, height:300, marginTop:200}}>No product</p>
-
 
                 </> : <>
                     <div className="breadcrumbs">
@@ -42,7 +39,7 @@ export default function ShowCart() {
                                 <div className="col-12">
                                     <div className="bread-inner">
                                         <ul className="bread-list">
-                                            <li><a href="/home">Home<i className="ti-arrow-right"></i></a></li>
+                                            <li><a href={"/home"}>Home<i className="ti-arrow-right"></i></a></li>
                                             <li className="active"><a href="#">Cart</a></li>
                                         </ul>
                                     </div>
@@ -71,8 +68,7 @@ export default function ShowCart() {
                                             totalPoint += item.total,
 
                                                 <tr>
-                                                    <td className="image" data-title="No"><img src={item.image} alt=""
-                                                                                               style={{width: 50}}/>
+                                                    <td className="image" data-title="No"><img src={item.image} alt="" style={{width: 50}}/>
                                                     </td>
                                                     <td className="product-des" data-title="Description">
                                                         {item.name}
