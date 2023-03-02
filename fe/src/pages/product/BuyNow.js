@@ -97,8 +97,10 @@ return(
                                                     </div>
 
                                                 </td>
-                                                <td className="total-amount" data-title="Total">
-                                                    {quantity * product.price} $</td>
+                                                {quantity?
+                                                    <td className="total-amount" data-title="Total">{quantity * product.price} $</td>:
+                                                    <td className="total-amount" data-title="Total">{product.price} $</td>}
+
 
                                             </tr>
                                     </tbody>
