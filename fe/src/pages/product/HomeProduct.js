@@ -35,7 +35,7 @@ export default function HomeProduct(){
         })
     },[]);
 
-
+    const productss = products.slice(0,4)
 
     return(
         <>
@@ -120,7 +120,7 @@ export default function HomeProduct(){
                                     <div className="tab-pane fade show active" id="man" role="tabpanel">
                                         <div className="tab-single">
                                             <div className="row">
-                                                {products.map((product, ind)=>(
+                                                {productss.map((product, ind)=>(
                                                     <div className="col-xl-3 col-lg-4 col-md-4 col-12">
                                                         <div className="single-product">
                                                             <div className="product-img">

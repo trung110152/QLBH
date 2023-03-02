@@ -35,6 +35,7 @@ export default function PurchaseOrder() {
                         <div className="col-12">
                                 <p> Order ID: {order.id}</p>
                                 <p>Total Price: {order.totalPoint}</p>
+                                <p>Time: {order.time}</p>
                                 <p>Status: {order.status}</p>
 
                             <button className="btn btn-outline-secondary" onClick={() => {

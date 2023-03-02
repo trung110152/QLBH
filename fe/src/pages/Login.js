@@ -38,38 +38,48 @@ export default function Login() {
         <>
 
                 <div className="row" >
-                    <div className="col-5" style={{marginTop:110}}>
+                    <div className="col-5" >
                         <div className="row" >
-                            <div >
+                            <div style={{marginTop:110}}>
                                 <h1 style={{textAlign:'center', fontStyle:'Serif'}}>Login</h1>
-                                <img style={{width:100,marginLeft:220}} src="/images/logo3.png" alt=""/>
+                                <div style={{textAlign:"center"}}>
+                                    <img style={{width:100}}  src="/images/logo3.png" alt=""/>
+                                </div>
+
                                 <Formik
                                     initialValues={{username:'', password:''}}
                                     onSubmit={(values)=>{
                                         handleLogin(values).then()
                                     }}>
                                     <Form>
-                                        <div className="mb-3" style={{marginLeft:50}}>
-                                            <label htmlFor="exampleInput" className="form-label">Username</label>
-                                            <Field  type="text" className="form-control" id="exampleInput" name={'username'}/>
-                                            {
-                                                user === 'Username is not existed' &&
-                                                <>
-                                                    <h6 style={{color: "red"}}>Username is not existed</h6>
-                                                </>
-                                            }
+                                        <div className="row">
+
+                                            <div className="mb-3" style={{width:300, margin:"auto"}}>
+                                                <label htmlFor="exampleInput" className="form-label">Username</label>
+                                                <Field  type="text" className="form-control" id="exampleInput" name={'username'}/>
+                                                {
+                                                    user === 'Username is not existed' &&
+                                                    <>
+                                                        <h6 style={{color: "red"}}>Username is not existed</h6>
+                                                    </>
+                                                }
+                                            </div>
+
+                                            <div>
+
+                                            </div>
+                                            <div className="mb-3" style={{width:300,margin:"auto"}}>
+                                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                                <Field type="password" className="form-control" id="exampleInputPassword1" name={'password'}/>
+                                                {
+                                                    user === 'Password is wrong' &&
+                                                    <>
+                                                        <h6 style={{color: "red"}}>Password is wrong</h6>
+                                                    </>
+                                                }
+                                            </div>
                                         </div>
 
-                                        <div className="mb-3" style={{marginLeft:50}}>
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                            <Field type="password" className="form-control" id="exampleInputPassword1" name={'password'}/>
-                                            {
-                                                user === 'Password is wrong' &&
-                                                <>
-                                                    <h6 style={{color: "red"}}>Password is wrong</h6>
-                                                </>
-                                            }
-                                        </div>
 
                                         <button type="submit" className="btn btn-primary" style={{marginLeft:180}} >Login</button>
                                         <Link to={'/register'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary">register</button></Link>
@@ -81,7 +91,7 @@ export default function Login() {
                         </div>
                     </div>
                     <div className="col-7">
-                        <img style={{height:650}} src="/images/1234.jpg" alt=""/>
+                        <img style={{height:750}} src="/images/1234.jpg" alt=""/>
                     </div>
                 </div>
 
