@@ -1,9 +1,9 @@
 import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {findByIdProduct} from "../../services/productsService";
-import {addCart, addOrder} from "../../services/orderService";
+import {addCart, addOrder, deleteCart, editOrder, showCart} from "../../services/orderService";
 
 export default function BuyNow() {
     const {id} = useParams();
@@ -48,12 +48,9 @@ export default function BuyNow() {
 
 return(
     <>
-        <h1>Product</h1>
-        <img  src={product.image}></img>
-        <p><span>Name</span>{product.name}</p>
-        <p><span>Price</span>{product.price}</p>
-        <p><span>Total quantity</span>{product.totalQuantity}</p>
-        <p><span>Category</span>{product.nameCategory}</p>
+
+               <h1>Product</h1>
+
         <Formik
             initialValues={{
                 receiver:'',
@@ -61,20 +58,83 @@ return(
                 address:'',
                 phone:''
             }}
-        onSubmit={(values)=>{
-            handleBuy(values);
-        }}>
+            onSubmit={(values)=>{
+                handleBuy(values);
+            }}>
             <Form>
-                <span>Quantity</span><input type="number" min={1} onClick={(e)=>{
-                    setQuantity(e.target.value)
-                }}/>
 
-                <p><span>totalPoint: </span>{quantity * product.price} $</p>
-                <Field type={'text'} name={'receiver'} placeholder={'receiver'}/>
-                <Field type={'text'} name={'phone'} placeholder={'phone'}/>
-                <Field type={'date'} name={'time'}/>
-                <Field type={'text'} name={'address'} placeholder={'address'}/>
-                <button>Buy now</button>
+                <div className="shopping-cart section">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
+                                <table className="table shopping-summery">
+                                    <thead>
+                                    <tr className="main-hading">
+                                        <th>PRODUCT</th>
+                                        <th>NAME</th>
+                                        <th className="text-center">UNIT PRICE</th>
+                                        <th className="text-center">QUANTITY</th>
+                                        <th className="text-center">TOTAL</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                            <tr>
+                                                <td className="image" data-title="No"><img src={product.image} alt=""
+                                                                                           style={{width: 50}}/>
+                                                </td>
+                                                <td className="product-des" data-title="name">
+                                                    {product.name}
+                                                </td>
+                                                <td className="price" data-title="Price"> {product.price} $</td>
+                                                <td className="product-des">
+                                                    <div className="row">
+                                                        <input  style={{margin:"auto", width:100}} type="number" min={1} onClick={(e)=>{
+                                                            setQuantity(e.target.value)
+                                                        }}/>
+                                                    </div>
+
+                                                </td>
+                                                <td className="total-amount" data-title="Total">
+                                                    {quantity * product.price} $</td>
+
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="mb-3 row">
+
+                        <div>
+                                <div className="mb-3" style={{width:350,margin:"auto"}}>
+                                    <label htmlFor="exampleInput" className="form-label">Receiver</label>
+                                    <Field type="text" className="form-control" id="exampleInput" name={'receiver'}/>
+                                </div>
+                                <div className="mb-3" style={{width:350,margin:"auto"}}>
+                                    <label htmlFor="exampleInput" className="form-label">Phone</label>
+                                    <Field type="text" className="form-control" id="exampleInput" name={'phone'}/>
+                                </div>
+                                <div className="mb-3" style={{width:350,margin:"auto"}}>
+                                    <label htmlFor="exampleInput" className="form-label">Address</label>
+                                    <Field type="text" className="form-control" id="exampleInput" name={'address'}/>
+                                </div>
+                                <div className="mb-3" style={{width:350,margin:"auto"}}>
+                                    <label htmlFor="exampleInput" className="form-label">Time</label>
+                                    <Field type="date" className="form-control" id="exampleInput" name={'time'}/>
+                                </div>
+                                <div style={{marginBottom:3, textAlign:"center"}}>
+                                    <button style={{width: 200}}
+                                            className="mt-3 btn btn-outline-danger">Buy now
+                                    </button>
+                                </div>
+                        </div>
+
+                </div>
+
             </Form>
         </Formik>
     </>
