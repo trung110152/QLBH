@@ -60,20 +60,20 @@ class OrderService {
             }
             return order;
         };
-        this.checkTotalPoint = async (idOrder) => {
-            let sql = `SELECT SUM(total) as totalPoint  FROM product_order p WHERE p.idOrder = ${idOrder};`;
-            let totalPoint = await this.productOrderRepository.query(sql);
-            if (!totalPoint) {
-                return "Can not check total point";
-            }
-            return totalPoint[0].totalPoint;
-        };
         this.saveCart = async (values) => {
             let cart = this.productOrderRepository.save(values);
             if (!cart) {
                 return 'Can not save cart';
             }
             return 'Saved cart';
+        };
+        this.countCart = async (idOrder) => {
+            let sql = `select count(po.idOrder) as countCart from product_order po where po.idOrder = ${idOrder};`;
+            let countCart = await this.orderRepository.query(sql);
+            if (!countCart) {
+                return 'Can not countCart';
+            }
+            return countCart[0].countCart;
         };
         this.orderRepository = data_source_1.AppDataSource.getRepository(order_1.Order);
         this.productOrderRepository = data_source_1.AppDataSource.getRepository(product_order_1.ProductOrder);
