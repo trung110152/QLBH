@@ -1,8 +1,7 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import dropdown from "bootstrap/js/src/dropdown";
 import {useEffect} from "react";
-import {countCart, findByStatus} from "../services/orderService";
+import {countCart, findByStatus, showCart} from "../services/orderService";
 
 
 export default function Navbar(){
@@ -16,8 +15,11 @@ export default function Navbar(){
         return state.orders.order
     })
     const count = useSelector(state=>{
-        console.log(state.orders)
         return state.orders.countCart
+    })
+
+    const carts = useSelector(state => {
+        return state.orders.cart
     })
 
 
@@ -28,6 +30,12 @@ export default function Navbar(){
         dispatch(countCart(order.id)).then(()=>{
         })
     }
+    if(order) {
+        dispatch(showCart(order.id)).then(()=>{
+        })
+    }
+
+    let totalPoint = 0;
     return(
         <>
                 <header className="header shop">
@@ -94,29 +102,29 @@ export default function Navbar(){
 
                                             <div className="shopping-item" >
                                                 <div className="dropdown-cart-header">
-                                                    <span>2 Items</span>
+                                                    <span>{count} Items</span>
                                                     <Link  style={{textDecoration: 'none'}} to="#">View Cart</Link>
                                                 </div>
                                                 <ul className="shopping-list">
-                                                    <li>
-                                                        <Link  style={{textDecoration: 'none'}} to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
-                                                        <Link  style={{textDecoration: 'none'}}  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
-                                                        <h4><Link  style={{textDecoration: 'none'}} to="#">Woman Ring</Link></h4>
-                                                        <p className="quantity">1x - <span className="amount">$99.00</span></p>
-                                                    </li>
-                                                    <li>
-                                                        <Link  style={{textDecoration: 'none'}} to="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></Link>
-                                                        <Link  style={{textDecoration: 'none'}}  to="#" className="cart-img"><img src="https://via.placeholder.com/70x70" alt="#"/></Link>
-                                                        <h4><Link  style={{textDecoration: 'none'}} to="#">Woman Necklace</Link></h4>
-                                                        <p className="quantity">1x - <span className="amount">$35.00</span></p>
-                                                    </li>
+                                                    {carts.length !== 0 && carts !== 'Saved cart'&&
+                                                        <>
+                                                            {carts.map((item)=>(
+                                                                totalPoint += item.total,
+                                                                <li>
+                                                                    <img src={item.image} alt="#" style={{width:50}}/>
+                                                                    <h4>{item.name}</h4>
+                                                                    <p>{item.quantity} x - <span className="amount">$ {item.price}</span></p>
+                                                                </li>
+                                                            ))
+                                                            }
+                                                            </>}
                                                 </ul>
                                                 <div className="bottom">
                                                     <div className="total">
                                                         <span>Total</span>
-                                                        <span className="total-amount">$134.00</span>
+                                                        <span className="total-amount">{totalPoint}</span>
                                                     </div>
-                                                    <Link  style={{textDecoration: 'none'}} to="checkout.html" className="btn animate">Checkout</Link>
+                                                    <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${order.id}`} className="btn animate">Checkout</Link>
                                                 </div>
                                             </div>
 
