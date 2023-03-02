@@ -1,7 +1,7 @@
 import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {addOrder, deleteCart, editOrder, findByStatus, showCart} from "../../services/orderService";
+import {addOrder, countCart, deleteCart, editOrder, findByStatus, showCart} from "../../services/orderService";
 import {useNavigate, useParams} from "react-router-dom";
 
 export default function ShowCart() {
@@ -12,6 +12,7 @@ export default function ShowCart() {
     const user = useSelector(state => {
         return state.user.currentUser
     })
+
 
     const dispatch = useDispatch();
 
@@ -138,7 +139,10 @@ export default function ShowCart() {
                                                                         totalPoint: 0,
                                                                         status: 'buying'
                                                                     }
-                                                                    dispatch(addOrder(order))
+                                                                    dispatch(addOrder(order)).then((e)=>{
+                                                                        dispatch(countCart(e.payload.id))
+                                                                    });
+
                                                                     navigate('/home')
                                                                 })
                                                             }}

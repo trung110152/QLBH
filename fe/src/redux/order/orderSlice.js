@@ -1,6 +1,6 @@
 import {
     addCart,
-    addOrder, deleteCart,
+    addOrder, countCart, deleteCart,
     editOrder,
     findByIdUser,
     findByStatus,
@@ -14,12 +14,17 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     order:[],
     cart:[],
-    orders:[]
+    orders:[],
+    countCart:'',
 }
 const orderSlice = createSlice({
         name:'order',
         initialState,
         extraReducers: builder => {
+            builder.addCase(countCart.fulfilled, (state, action) => {
+                state.countCart = action.payload
+
+            });
             builder.addCase(addOrder.fulfilled, (state, action) => {
                 state.order = action.payload
 
