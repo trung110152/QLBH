@@ -1,7 +1,7 @@
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {countCart, findByStatus, showCart} from "../services/orderService";
+import {findByStatus, showCart} from "../services/orderService";
 
 
 export default function Navbar(){
@@ -14,26 +14,25 @@ export default function Navbar(){
     const order = useSelector(state=>{
         return state.orders.order
     })
-    const count = useSelector(state=>{
-        return state.orders.countCart
-    })
+
 
     const carts = useSelector(state => {
         return state.orders.cart
     })
 
 
+
     useEffect(()=>{
-        dispatch(findByStatus(user.idUser))
+        dispatch(findByStatus(user.idUser)).then(()=> {
+            if(order) {
+                dispatch(showCart(order.id)).then(()=>{
+                }).then(()=>{
+                })
+            }
+
+        });
     },[])
-    if(order) {
-        dispatch(countCart(order.id)).then(()=>{
-        })
-    }
-    if(order) {
-        dispatch(showCart(order.id)).then(()=>{
-        })
-    }
+
 
     let totalPoint = 0;
     return(
@@ -98,11 +97,11 @@ export default function Navbar(){
                                             <Link  style={{textDecoration: 'none'}} to={`/home/purchase-order/${user.idUser}`} className="single-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
                                         </div>
                                         <div className="sinlge-bar shopping">
-                                            <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${order.id}`} className="single-icon"><i className="ti-bag"></i> <span className="total-count">{count}</span></Link>
+                                            <Link  style={{textDecoration: 'none'}} to={`/home/show-cart/${order.id}`} className="single-icon"><i className="ti-bag"></i> <span className="total-count">{carts.length}</span></Link>
 
                                             <div className="shopping-item" >
                                                 <div className="dropdown-cart-header">
-                                                    <span>{count} Items</span>
+                                                    <span>{carts.length} Items</span>
                                                     <Link  style={{textDecoration: 'none'}} to="#">View Cart</Link>
                                                 </div>
                                                 <ul className="shopping-list">

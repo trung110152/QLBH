@@ -1,26 +1,16 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {findByName, getProducts} from "../../services/productsService";
-import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {getCategory} from "../../services/categoruService";
 import button from "bootstrap/js/src/button";
+import {findByStatus, showCart} from "../../services/orderService";
 
 
 
 export default function HomeProduct(){
     const dispatch = useDispatch();
 
-
-    // const [page] = useSearchParams()
-    // const page1 = page.get('page') || 1;
-    // const load = useSelector(state=>{
-    //     return state.products.loading
-    // })
-    // const totalPages = useSelector(state => {
-    //     if (state.products.products !== undefined) {
-    //         return state.products.products.totalPage;
-    //     }
-    // })
     const user = useSelector(state=>{
         return state.user.currentUser
     })
@@ -30,6 +20,9 @@ export default function HomeProduct(){
 
     useEffect(()=>{
         dispatch(getProducts()).then(()=>{
+            dispatch(findByStatus(user.idUser)).then((e)=> {
+                dispatch(showCart(e.payload.id))
+            });
         })
     },[]);
 
