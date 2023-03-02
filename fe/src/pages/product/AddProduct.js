@@ -93,7 +93,9 @@ export default function AddProduct() {
         <>
             <div className="row">
                 <div className="offset-3 col-6 mt-5">
-                    <h1 style={{textAlign: 'center'}}>Add Product</h1>
+                    <div className="section-title">
+                        <h2>Add Products</h2>
+                    </div>
                     <Formik
                         initialValues={{
                             name: '',
