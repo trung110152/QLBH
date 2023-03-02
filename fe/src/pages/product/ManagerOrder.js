@@ -32,14 +32,14 @@ export default function ManagerOrder() {
                         }
                         dispatch(editOrder(value))
                     }}>Confirm</button>
-                    <p>{order.id}</p>
-                    <p>{order.totalPoint}</p>
-                    <p>{order.status}</p>
+                    <p>Order ID: {order.id}</p>
+                    <p>Total Price: {order.totalPoint}</p>
+                    <p>Status: {order.status}</p>
 
                     <button onClick={() => {
                         dispatch(showCart(order.id))
                         setI(index)
-                    }}>detail
+                    }}>Detail
                     </button>
                     {index === i && carts !== 'Saved cart' && carts.map(item => (
                         <tr>

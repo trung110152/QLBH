@@ -35,7 +35,7 @@ export default function PurchaseOrder() {
                     <button onClick={() => {
                         dispatch(showCart(order.id))
                         setI(index)
-                    }}>detail
+                    }}>Detail
                     </button>
                     {index === i && carts !== 'Saved cart' && carts.map(item => (
                         <tr>
