@@ -33,15 +33,6 @@ class OrderController {
                 res.status(500).json(e.message);
             }
         };
-        this.checkTotalPoint = async (req, res) => {
-            try {
-                let response = await this.orderService.checkTotalPoint(req.params.idOrder);
-                res.status(200).json(response);
-            }
-            catch (e) {
-                res.status(500).json(e.message);
-            }
-        };
         this.addCart = async (req, res) => {
             try {
                 let response = await this.orderService.saveCart(req.body);
@@ -85,6 +76,15 @@ class OrderController {
             try {
                 let idUser = req.params.idUser;
                 let response = await this.orderService.findById(idUser);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
+        this.countCart = async (req, res) => {
+            try {
+                let response = await this.orderService.countCart(req.params.idOrder);
                 res.status(200).json(response);
             }
             catch (e) {
