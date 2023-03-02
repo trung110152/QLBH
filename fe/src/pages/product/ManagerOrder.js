@@ -39,6 +39,7 @@ export default function ManagerOrder() {
                             <p>Total Price: {order.totalPoint}</p>
                             <p>Time: {order.time}</p>
                             <p>Status: {order.status}</p>
+                            <p>username: {order.username}</p>
                         </div>
                     </div>
 
