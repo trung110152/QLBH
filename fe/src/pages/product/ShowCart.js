@@ -2,7 +2,7 @@ import {Field, Form, Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {addOrder, countCart, deleteCart, editOrder, findByStatus, showCart} from "../../services/orderService";
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 export default function ShowCart() {
     const {idOrder} = useParams();
@@ -31,7 +31,11 @@ export default function ShowCart() {
     return (
         <>
             {
-                carts.length === 0 || carts === 'Saved cart'? <><p>No product</p></> : <>
+                carts.length === 0 || carts === 'Saved cart'? <>
+                    <p style={{textAlignLast:"center", fontSize:100, height:300, marginTop:200}}>No product</p>
+
+
+                </> : <>
                     <div className="breadcrumbs">
                         <div className="container">
                             <div className="row">
@@ -79,12 +83,12 @@ export default function ShowCart() {
                                                     </td>
                                                     <td className="total-amount" data-title="Total">
                                                         <span>{item.total} $</span></td>
-                                                    <td className="action" data-title="Remove"><a style={{textDecoration:"none"}} href="#"><i
+                                                    <td className="action" data-title="Remove"><Link style={{textDecoration:"none"}} to="#"><i
                                                         className="ti-trash remove-icon" onClick={()=>{
                                                             dispatch(deleteCart(item.id)).then(()=>{
                                                                 dispatch(showCart(idOrder))
                                                             })
-                                                    }}></i></a></td>
+                                                    }}></i></Link></td>
                                                 </tr>
                                         ))}
                                         </tbody>

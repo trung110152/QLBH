@@ -11,8 +11,6 @@ export default function ProductList() {
 
     const dispatch = useDispatch();
 
-
-
     const categories = useSelector(state => {
         return   state.categories.category
     })
