@@ -65,11 +65,14 @@ return(
             handleBuy(values);
         }}>
             <Form>
-                <span>Quantity</span><input type="number" min={1} onClick={(e)=>{
+                <span>Quantity</span><input type="number" min={1} placeholder={1} onClick={(e)=>{
                     setQuantity(e.target.value)
                 }}/>
+                {quantity ?
+                    <p><span>totalPoint: </span>{quantity * product.price} $</p>:
+                    <p><span>totalPoint: </span>{product.price} $</p>
+                }
 
-                <p><span>totalPoint: </span>{quantity * product.price} $</p>
                 <Field type={'text'} name={'receiver'} placeholder={'receiver'}/>
                 <Field type={'text'} name={'phone'} placeholder={'phone'}/>
                 <Field type={'date'} name={'time'}/>
