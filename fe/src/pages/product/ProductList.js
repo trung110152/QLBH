@@ -29,6 +29,8 @@ export default function ProductList() {
         dispatch(getProducts())
     }, []);
 
+    const productss = products.slice(0,3)
+
 
     return (
         <>
@@ -95,55 +97,21 @@ export default function ProductList() {
                                     </ul>
                                 </div>
                                 <div className="single-widget recent-post">
-                                    <h3 className="title">Recent post</h3>
+                                    <h3 className="title">Hot Products</h3>
+                                    {productss.map((product, ind)=>(
                                     <div className="single-post first">
                                         <div className="image">
-                                            <img src="https://via.placeholder.com/75x75" alt="#"/>
+                                            <img className="default-img"
+                                                 src={product.image} alt="#" style={{width:75, height:75}}/>
                                         </div>
                                         <div className="content">
-                                            <h5><a href="#">Girls Dress</a></h5>
-                                            <p className="price">$99.50</p>
-                                            <ul className="reviews">
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li><i className="ti-star"></i></li>
-                                                <li><i className="ti-star"></i></li>
-                                            </ul>
+                                            <h5><a style={{textDecoration:"none"}} href={`/home/focus-product/${product.id}`}>{product.name}</a></h5>
+                                            <p className="price">{product.price}$</p>
+
                                         </div>
                                     </div>
-                                    <div className="single-post first">
-                                        <div className="image">
-                                            <img src="https://via.placeholder.com/75x75" alt="#"/>
-                                        </div>
-                                        <div className="content">
-                                            <h5><a href="#">Women Clothings</a></h5>
-                                            <p className="price">$99.50</p>
-                                            <ul className="reviews">
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li><i className="ti-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="single-post first">
-                                        <div className="image">
-                                            <img src="https://via.placeholder.com/75x75" alt="#"/>
-                                        </div>
-                                        <div className="content">
-                                            <h5><a href="#">Man Tshirt</a></h5>
-                                            <p className="price">$99.50</p>
-                                            <ul className="reviews">
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                                <li className="yellow"><i className="ti-star"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                        ))
+                                    }
                                 </div>
                                 <div className="single-widget category">
                                     <h3 className="title">Manufacturers</h3>
