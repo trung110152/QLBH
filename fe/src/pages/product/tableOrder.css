@@ -43,12 +43,6 @@ th, td {
     border-top: 1px solid #dee2e6;
 }
 
-th {
-    text-align: inherit;
-    background-color: #cb6437;
-    color: #fff;
-    font-weight: bold;
-}
 
 tbody tr:nth-of-type(even) {
     background-color: #f8f9fa;
@@ -58,18 +52,7 @@ tbody tr:hover {
     background-color: rgba(176, 108, 87, 0.63);
 }
 
-button{
-    text-align: center;
-    margin: auto;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
 
-}
-
-button:hover{
-    background-color: rgba(176, 108, 87, 0.63) ;
-}
 
 h1{
     text-align: center;

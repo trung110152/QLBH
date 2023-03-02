@@ -28,7 +28,7 @@ export default function PurchaseOrder() {
 
 
             <h1>Purchase Order</h1>
-            {orders.length === 0 && <><p>No order </p></>}
+            {orders.length === 0 && <><p style={{textAlignLast:"center", fontSize:100, height:300, marginTop:200}}>No order </p></>}
             {orders !== 'Can not find by id order' && orders.map((order, index) => (
                 <>
                     <div className="row" id="table1">
@@ -37,7 +37,7 @@ export default function PurchaseOrder() {
                                 <p>Total Price: {order.totalPoint}</p>
                                 <p>Status: {order.status}</p>
 
-                            <button onClick={() => {
+                            <button className="btn btn-outline-secondary" onClick={() => {
                                 dispatch(showCart(order.id))
                                 setI(index)
                             }}>Detail
@@ -49,7 +49,7 @@ export default function PurchaseOrder() {
                             {index === i && carts !== 'Saved cart' &&
                                 <>
                                     <thead>
-                                    <tr>
+                                    <tr className='.bg-secondary'>
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Price</th>
