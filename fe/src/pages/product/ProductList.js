@@ -1,9 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {findByName, findByNameProduct, getProducts} from "../../services/productsService";
+import {findByName, findByNameProduct, findByPrice, getProducts} from "../../services/productsService";
 import button from "bootstrap/js/src/button";
 import {getCategory} from "../../services/categoruService";
 import {Link} from "react-router-dom";
+import {Field, Form, Formik} from "formik";
 
 
 export default function ProductList() {
@@ -71,10 +72,25 @@ export default function ProductList() {
                                         <div className="price-filter-inner">
                                             <div id="slider-range"></div>
                                             <div className="price_slider_amount">
-                                                <div className="label-input">
-                                                    <span>Range:</span><input type="text" id="amount" name="price"
-                                                                              placeholder="Add Your Price"/>
-                                                </div>
+                                                <Formik
+                                                initialValues={{
+                                                    min: '',
+                                                    max: ''
+                                                }}
+                                                onSubmit={(values)=>{
+                                                    dispatch(findByPrice(values))
+                                                }}>
+                                                    <Form>
+                                                        <div className="label-input">
+                                                            <span>Range:</span>
+                                                            <div>
+                                                                <Field type="text" id="amount1" name="min" placeholder="Min Your Price"/>
+                                                                <Field type="text" id="amount2" name="max" placeholder="Max Your Price"/>
+                                                            </div>
+                                                        </div>
+                                                        <button>Filter</button>
+                                                    </Form>
+                                            </Formik>
                                             </div>
                                         </div>
                                     </div>

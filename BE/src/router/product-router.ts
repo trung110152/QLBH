@@ -12,5 +12,6 @@ productRouter.get('/getCategories', homeController.getCategories);
 productRouter.post('/addCategories', homeController.addCategory);
 productRouter.get('/search/findByName', homeController.search);
 productRouter.get('/search/findByNameProduct', homeController.findByNameProduct);
+productRouter.get('/search/findByPrice', homeController.findByPrice);
 
 

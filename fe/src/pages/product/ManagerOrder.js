@@ -75,14 +75,16 @@ export default function ManagerOrder() {
                                 setI(index)
                             }}>Detail
                             </button>
-                            <button className="ml-3 btn btn-outline-secondary " onClick={() => {
+                            {order.status === "loading" &&
+                                <button className="ml-3 btn btn-outline-secondary " onClick={() => {
                                 let value = {
                                     id: order.id,
                                     status: 'moving'
                                 }
                                 dispatch(editOrder(value))
                             }}>Confirm
-                            </button>
+                            </button>}
+
                         </div>
                     </div>
                     {index === i && carts !== 'Saved cart' &&

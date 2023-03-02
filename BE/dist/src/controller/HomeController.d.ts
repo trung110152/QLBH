@@ -12,6 +12,7 @@ declare class HomeController {
     remove: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
     search: (req: Request, res: Response) => Promise<void>;
     findByNameProduct: (req: Request, res: Response) => Promise<void>;
+    findByPrice: (req: Request, res: Response) => Promise<void>;
     getCategories: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: HomeController;
