@@ -144,10 +144,11 @@ export default function ShowCart() {
                                                                         status: 'buying'
                                                                     }
                                                                     dispatch(addOrder(order)).then((e)=>{
-                                                                        dispatch(countCart(e.payload.id))
+                                                                        dispatch(showCart(e.payload.id))
                                                                     });
 
-                                                                    navigate('/home')
+                                                                    navigate('/home');
+
                                                                 })
                                                             }}
                                                         >

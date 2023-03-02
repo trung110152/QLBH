@@ -2,7 +2,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {findByIdProduct, getProducts} from "../../services/productsService";
-import {addCart, findByStatus} from "../../services/orderService";
+import {addCart, findByStatus, showCart} from "../../services/orderService";
 import swal from "sweetalert";
 import Login from "../Login";
 
@@ -28,7 +28,9 @@ export default function FocusProduct() {
 
     const handleAddCart = () => {
         if(cart.idProduct) {
-            dispatch(addCart(cart));
+            dispatch(addCart(cart)).then(()=>{
+                dispatch(showCart(cart.idOrder))
+            });
             swal("Added to cart!", {
                 icon: "success",
             })
@@ -49,11 +51,6 @@ export default function FocusProduct() {
 
     return (
         <>
-
-
-
-
-
             <div className="breadcrumbs">
                 <div className="container">
                     <div className="row">
@@ -124,7 +121,7 @@ export default function FocusProduct() {
                                                     total: totall,
                                                     quantity: quantity,
                                                     idOrder: data.payload.id
-                                                })
+                                                });
                                             })
                                         }}/></span></p>
                                             {total ?
