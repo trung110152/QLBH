@@ -81,14 +81,16 @@ export default function ProductList() {
                                                     dispatch(findByPrice(values))
                                                 }}>
                                                     <Form>
-                                                        <div className="label-input">
-                                                            <span>Range:</span>
+                                                        <div className="label-input" style={{textAlign:"center"}}>
+                                                            <span>Range</span>
                                                             <div>
-                                                                <Field type="text" id="amount1" name="min" placeholder="Min Your Price"/>
-                                                                <Field type="text" id="amount2" name="max" placeholder="Max Your Price"/>
+                                                                <Field  type="text" id="amount1" name="min" placeholder="Min Your Price" style={{border:'1px solid', background:'white',marginBottom:10 }}/>
+                                                                <Field type="text" id="amount2" name="max" placeholder="Max Your Price" style={{border:'1px solid', background:'white' }}/>
                                                             </div>
                                                         </div>
-                                                        <button className="  btn btn-outline-secondary my-2 my-sm-0 " >Filter</button>
+                                                        <div style={{textAlign:"center", marginTop:10}}>
+                                                        <button style={{height:30}} className="  btn btn-outline-secondary my-2 my-sm-0 " >Filter</button>
+                                                        </div>
                                                     </Form>
                                             </Formik>
                                             </div>

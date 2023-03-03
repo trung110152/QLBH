@@ -81,10 +81,10 @@ export default function Navbar(){
 
                                 </div>
                                 <div className="col-lg-8 col-md-7 col-12">
-                                    <div className="search-top">
-                                        <div className="top-search"><Link  style={{textDecoration: 'none'}} to="#0"><i className="ti-search"></i></Link></div>
+
+                                    <div className="mobile-nav">
+                                        <Link  style={{textDecoration: 'none'}} to="/home"><img style={{width:1000,height:150}} src="/images/bia.png" alt="logo"/></Link>
                                     </div>
-                                    <div className="mobile-nav"></div>
 
                             </div>
                                 <div className="col-lg-2 col-md-3 col-12">
@@ -153,10 +153,10 @@ export default function Navbar(){
                                                                             <li><a  style={{textDecoration: 'none'}} href="/home/manager-order">Manager Order</a></li>
                                                                         </ul>
                                                                     </li>
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product <i className="ti-angle-down"></i></Link>
+                                                                    <li><Link  style={{textDecoration: 'none'}} to="#">Add  <i className="ti-angle-down"></i></Link>
                                                                     <ul className="dropdown">
                                                                         <li><Link  style={{textDecoration: 'none'}} to="/home/add-category">Add Category</Link></li>
-                                                                        <li><Link  style={{textDecoration: 'none'}} to="#">Add Home </Link></li>
+                                                                        <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product </Link></li>
                                                                     </ul>
                                                                     </li>
                                                                 </>
@@ -165,7 +165,7 @@ export default function Navbar(){
 
                                                             <li><Link  style={{textDecoration: 'none'}} to="#">About</Link></li>
 
-                                                            <li><Link  style={{textDecoration: 'none'}} to="#">People</Link></li>
+                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/people">People</Link></li>
                                                         </ul>
                                                     </div>
                                                 </div>

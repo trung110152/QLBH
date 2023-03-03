@@ -95,7 +95,7 @@ export default function Register() {
                                     <div className="row">
                                         <div style={{textAlign:"center"}}>
                                             <button type="submit" className="btn btn-warning"  >Register</button>
-                                            <Link to={'/'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary"> Back Login</button></Link>
+                                            <Link to={'/'} ><button style={{marginLeft:10}} type="submit" className="btn btn-secondary"> Back to Login</button></Link>
 
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@ export default function Register() {
                     </div>
                 </div>
                 <div className="col-7">
-                    <img style={{height:750}} src="/images/1234.jpg" alt=""/>
+                    <img style={{width:'100%',height:'100%'}} src="/images/CHANEL-ALURE-HOME-SPORT-02.jpg" alt=""/>
                 </div>
             </div>
 
