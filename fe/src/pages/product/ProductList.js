@@ -176,7 +176,7 @@ export default function ProductList() {
                                                                 <div className="product-action-2">
                                                                     <Link  style={{textDecoration: 'none'}}  to="/home/addCart">Add to cart</Link>
                                                                     <span> or </span>
-                                                                    <Link  style={{textDecoration: 'none'}}  to="#" style={{color: "red"}}>Buy now</Link>
+                                                                    <Link  style={{textDecoration: 'none'}} to={`/home/buy-now/${product.id}`} style={{color: "red"}}>Buy now</Link>
                                                                 </div>
                                                             </div>
                                                         </div>

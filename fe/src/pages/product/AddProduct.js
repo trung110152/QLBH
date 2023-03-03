@@ -36,7 +36,7 @@ export default function AddProduct() {
         swal("Added new product success!", {
             icon: "success",
         });
-        await navigate('/home')
+        await navigate('/home/manager-product')
     }
 
     const [images, setImages] = useState([]);
