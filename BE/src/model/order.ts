@@ -12,7 +12,7 @@ export class Order {
     address: string
     @Column()
     phone: number
-    @Column({type: "timestamp"})
+    @Column()
     time: string
     @Column()
     totalPoint: number

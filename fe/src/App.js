@@ -16,6 +16,7 @@ import AddCategory from "./pages/product/AddCategory";
 import PurchaseOrder from "./pages/product/PurchaseOrder";
 import ManagerOrder from "./pages/product/ManagerOrder";
 import BuyNow from "./pages/product/BuyNow";
+import People from "./pages/product/People";
 
 function App() {
   // service -> slice -> store -> selector -> useEffect
@@ -43,6 +44,7 @@ function App() {
                       <Route path={'show-cart/:idOrder'} element={<ShowCart/>}/>
                       <Route path={'purchase-order/:idUser'} element={<PurchaseOrder/>}/>
                       <Route path={'buy-now/:id'} element={<BuyNow/>}/>
+                      <Route path={'people'} element={<People/>}/>
                   </Route>:
                   <Route path={''} element={<Login/>}/>
             }
