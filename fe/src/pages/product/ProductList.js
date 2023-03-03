@@ -98,7 +98,7 @@ export default function ProductList() {
                                     </div>
                                 </div>
                                 <div className="single-widget recent-post">
-                                    <h3 className="title">Hot Products</h3>
+                                    <h3 className="title">Top 3 Hot Products</h3>
                                     {productss.map((product, ind)=>(
                                     <div className="single-post first">
                                         <div className="image">
@@ -118,10 +118,10 @@ export default function ProductList() {
                                     <h3 className="title">Manufacturers</h3>
                                     <ul className="categor-list">
                                         <li><a href="#">Forever</a></li>
-                                        <li><a href="#">giordano</a></li>
-                                        <li><a href="#">abercrombie</a></li>
-                                        <li><a href="#">ecko united</a></li>
-                                        <li><a href="#">zara</a></li>
+                                        <li><a href="#">Giordano</a></li>
+                                        <li><a href="#">Abercrombie</a></li>
+                                        <li><a href="#">Ecko United</a></li>
+                                        <li><a href="#">Zara</a></li>
                                     </ul>
                                 </div>
                             </div>
