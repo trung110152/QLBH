@@ -88,29 +88,12 @@ export default function ProductList() {
                                                                 <Field type="text" id="amount2" name="max" placeholder="Max Your Price"/>
                                                             </div>
                                                         </div>
-                                                        <button>Filter</button>
+                                                        <button className="  btn btn-outline-secondary my-2 my-sm-0 " >Filter</button>
                                                     </Form>
                                             </Formik>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul className="check-box-list">
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="1"><input name="news" id="1"
-                                                                                                  type="checkbox"/>$20 -
-                                                $50<span className="count">(3)</span></label>
-                                        </li>
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="2"><input name="news" id="2"
-                                                                                                  type="checkbox"/>$50 -
-                                                $100<span className="count">(5)</span></label>
-                                        </li>
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="3"><input name="news" id="3"
-                                                                                                  type="checkbox"/>$100 -
-                                                $250<span className="count">(8)</span></label>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div className="single-widget recent-post">
                                     <h3 className="title">Hot Products</h3>
