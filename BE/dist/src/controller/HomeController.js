@@ -132,6 +132,17 @@ class HomeController {
                 res.status(500).json(e.message);
             }
         };
+        this.findByPrice = async (req, res) => {
+            try {
+                let min = req.query.min;
+                let max = req.query.max;
+                let response = await ProductService_1.default.findByPrice(min, max);
+                res.status(200).json(response);
+            }
+            catch (e) {
+                res.status(500).json(e.message);
+            }
+        };
         this.getCategories = async (req, res) => {
             try {
                 let response = await CategoryService_1.default.getAll();

@@ -1,9 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {findByName, findByNameProduct, getProducts} from "../../services/productsService";
+import {findByName, findByNameProduct, findByPrice, getProducts} from "../../services/productsService";
 import button from "bootstrap/js/src/button";
 import {getCategory} from "../../services/categoruService";
 import {Link} from "react-router-dom";
+import {Field, Form, Formik} from "formik";
 
 
 export default function ProductList() {
@@ -71,30 +72,28 @@ export default function ProductList() {
                                         <div className="price-filter-inner">
                                             <div id="slider-range"></div>
                                             <div className="price_slider_amount">
-                                                <div className="label-input">
-                                                    <span>Range:</span><input type="text" id="amount" name="price"
-                                                                              placeholder="Add Your Price"/>
-                                                </div>
+                                                <Formik
+                                                initialValues={{
+                                                    min: '',
+                                                    max: ''
+                                                }}
+                                                onSubmit={(values)=>{
+                                                    dispatch(findByPrice(values))
+                                                }}>
+                                                    <Form>
+                                                        <div className="label-input">
+                                                            <span>Range:</span>
+                                                            <div>
+                                                                <Field type="text" id="amount1" name="min" placeholder="Min Your Price"/>
+                                                                <Field type="text" id="amount2" name="max" placeholder="Max Your Price"/>
+                                                            </div>
+                                                        </div>
+                                                        <button className="  btn btn-outline-secondary my-2 my-sm-0 " >Filter</button>
+                                                    </Form>
+                                            </Formik>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul className="check-box-list">
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="1"><input name="news" id="1"
-                                                                                                  type="checkbox"/>$20 -
-                                                $50<span className="count">(3)</span></label>
-                                        </li>
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="2"><input name="news" id="2"
-                                                                                                  type="checkbox"/>$50 -
-                                                $100<span className="count">(5)</span></label>
-                                        </li>
-                                        <li>
-                                            <label className="checkbox-inline" htmlFor="3"><input name="news" id="3"
-                                                                                                  type="checkbox"/>$100 -
-                                                $250<span className="count">(8)</span></label>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div className="single-widget recent-post">
                                     <h3 className="title">Hot Products</h3>

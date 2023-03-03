@@ -22,7 +22,10 @@ export default function ManagerOrder() {
     const [i, setI] = useState(-1)
     return (
         <>
-            <h1>Manager Order</h1>
+            <div className="mt-3 section-title">
+                <h2>Manager Order</h2>
+            </div>
+
             {orders !== 'Can not find by id order' && orders.map((order, index) => (
                 <>
                     <div className="row" id="table1">
@@ -72,14 +75,16 @@ export default function ManagerOrder() {
                                 setI(index)
                             }}>Detail
                             </button>
-                            <button className="ml-3 btn btn-outline-secondary " onClick={() => {
+                            {order.status === "loading" &&
+                                <button className="ml-3 btn btn-outline-secondary " onClick={() => {
                                 let value = {
                                     id: order.id,
                                     status: 'moving'
                                 }
                                 dispatch(editOrder(value))
                             }}>Confirm
-                            </button>
+                            </button>}
+
                         </div>
                     </div>
                     {index === i && carts !== 'Saved cart' &&

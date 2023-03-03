@@ -7,6 +7,7 @@ declare class ProductService {
     findById: (id: any) => Promise<any>;
     findByName: (search: any) => Promise<any>;
     findByNameProduct: (search: any) => Promise<any>;
+    findByPrice: (min: any, max: any) => Promise<any>;
     remove: (id: any) => Promise<"Can not remove product" | "Removed product">;
 }
 declare const _default: ProductService;

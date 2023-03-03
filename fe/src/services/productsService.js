@@ -37,6 +37,16 @@ export const findByNameProduct = createAsyncThunk(
     }
 )
 
+export const findByPrice = createAsyncThunk(
+    'products/findByPrice',
+    async (data)=>{
+
+        const res = await customAxios.get(`products/search/findByPrice?min=${data.min}&&max=${data.max}`);
+        return res.data;
+    }
+)
+
+
 
 export const addProduct = createAsyncThunk(
     'products/addProduct',

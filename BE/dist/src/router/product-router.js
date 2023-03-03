@@ -16,4 +16,5 @@ exports.productRouter.get('/getCategories', HomeController_1.default.getCategori
 exports.productRouter.post('/addCategories', HomeController_1.default.addCategory);
 exports.productRouter.get('/search/findByName', HomeController_1.default.search);
 exports.productRouter.get('/search/findByNameProduct', HomeController_1.default.findByNameProduct);
+exports.productRouter.get('/search/findByPrice', HomeController_1.default.findByPrice);
 //# sourceMappingURL=product-router.js.map

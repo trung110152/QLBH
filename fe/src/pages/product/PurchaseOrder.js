@@ -26,8 +26,10 @@ export default function PurchaseOrder() {
     return (
         <>
 
+            <div className="mt-3 section-title">
+                <h2>Purchase Order</h2>
+            </div>
 
-            <h1>Purchase Order</h1>
             {orders.length === 0 && <><p style={{textAlignLast:"center", fontSize:100, height:300, marginTop:200}}>No order </p></>}
             {orders !== 'Can not find by id order' && orders.map((order, index) => (
                 <>

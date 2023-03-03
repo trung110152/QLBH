@@ -56,7 +56,7 @@ export default function Navbar(){
                                     <div className="right-content">
                                         <ul className="list-main">
                                             <li><i className="ti-location-pin"></i><Link style={{textDecoration:"none"}} to="https://www.google.com/maps/@20.9997628,105.8071965,16z?hl=vi-VN">Store location</Link> </li>
-                                            <li><i className="ti-alarm-clock"></i> <Link  style={{textDecoration: 'none'}} to="#">History</Link></li>
+                                            <li><i className="ti-alarm-clock"></i> <Link  style={{textDecoration: 'none'}} to={`/home/purchase-order/${user.idUser}`}>History</Link></li>
                                             <li><i className="ti-user"></i> <Link  style={{textDecoration: 'none'}} to="#" >{user.username}</Link></li>
                                             <li><i className="ti-power-off"></i><a type={'summit'} onClick={()=>{
                                                 localStorage.clear()
@@ -144,38 +144,28 @@ export default function Navbar(){
                                                 <div className="navbar-collapse">
                                                     <div className="nav-inner">
                                                         <ul className="nav main-menu menu navbar-nav">
-                                                            <li className="active"><Link  style={{textDecoration: 'none'}} to="/home" >Home</Link></li>
+                                                            <li className="active"><a  style={{textDecoration: 'none'}} href="/home" >Home</a></li>
                                                             {user.role === 'admin' &&
                                                                 <>
                                                                     <li><Link  style={{textDecoration: 'none'}} to="#">Manager <i className="ti-angle-down"></i></Link>
                                                                         <ul className="dropdown">
-                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-product">Manager Product</Link></li>
-                                                                            <li><Link  style={{textDecoration: 'none'}} to="/home/manager-order">Manager Order</Link></li>
+                                                                            <li><a  style={{textDecoration: 'none'}} href="/home/manager-product">Manager Product</a></li>
+                                                                            <li><a  style={{textDecoration: 'none'}} href="/home/manager-order">Manager Order</a></li>
                                                                         </ul>
                                                                     </li>
                                                                     <li><Link  style={{textDecoration: 'none'}} to="/home/add-product">Add Product <i className="ti-angle-down"></i></Link>
                                                                     <ul className="dropdown">
                                                                         <li><Link  style={{textDecoration: 'none'}} to="/home/add-category">Add Category</Link></li>
-                                                                        <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Add Home </Link></li>
+                                                                        <li><Link  style={{textDecoration: 'none'}} to="#">Add Home </Link></li>
                                                                     </ul>
                                                                     </li>
                                                                 </>
                                                             }
                                                             <li><Link  style={{textDecoration: 'none'}} to="my-product">Products</Link></li>
-                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></Link>
-                                                                <ul className="dropdown">
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="shop-grid.html">Shop Grid</Link></li>
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="cart.html">Cart</Link></li>
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="checkout.html">Checkout</Link></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Pages</Link></li>
-                                                            <li><Link  style={{textDecoration: 'none'}} to="#">Blog<i className="ti-angle-down"></i></Link>
-                                                                <ul className="dropdown">
-                                                                    <li><Link  style={{textDecoration: 'none'}} to="blog-single-sidebar.html">Blog Single Sidebar</Link></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li><Link  style={{textDecoration: 'none'}} to="contact.html">Contact Us</Link></li>
+
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">About</Link></li>
+
+                                                            <li><Link  style={{textDecoration: 'none'}} to="#">People</Link></li>
                                                         </ul>
                                                     </div>
                                                 </div>
