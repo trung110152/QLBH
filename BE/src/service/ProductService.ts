@@ -78,13 +78,13 @@ class ProductService {
          if(!min && !max){
             a=''
         }else {
-             a = `where p.price >${min} and p.price < ${max}`;
+             a = `where p.price >=${min} and p.price <= ${max}`;
          }
         if(!min){
-            a = `where p.price < ${max}`;
+            a = `where p.price <= ${max}`;
         };
         if(!max){
-            a = `where p.price > ${min}`;
+            a = `where p.price >= ${min}`;
         }
         let sql =`select p.id, p.name, p.price, p.description, p.totalQuantity, p.image, c.name as nameCategory from product_category pc join product p on pc.idProduct = p.id join category c on pc.idCategory = c.id ${a}`;
         let product = await this.productRepository.query(sql);

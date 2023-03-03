@@ -34,7 +34,7 @@ __decorate([
     __metadata("design:type", Number)
 ], Order.prototype, "phone", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: "timestamp" }),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Order.prototype, "time", void 0);
 __decorate([
